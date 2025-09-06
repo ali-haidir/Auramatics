@@ -1,5 +1,5 @@
 "use client";
-
+// import Logo from "@/public/images/NavBar/AURAMATICS_Nofil.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -73,8 +73,8 @@ export default function Navbar({
       <div className="flex items-center">
         <Link href="/">
           <Image
-            src="/images/NavBar/AURAMATICS_Nofil.jpeg"
-            alt="SK Medical Logo"
+            src={"/images/NavBar/AURAMATICS_Nofil.jpeg"}
+            alt="Logo"
             width={40}
             height={40}
             priority

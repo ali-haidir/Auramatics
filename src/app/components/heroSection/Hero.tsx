@@ -2,6 +2,7 @@
 import React, { forwardRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+// import HeroBg from "@/public/images/Homepage/image.png";
 
 const Hero = forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -11,7 +12,7 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => {
     >
       {/* Background Image */}
       <Image
-        src="/images/Homepage/image.png"
+        src={"/images/Homepage/image.png"}
         alt="Hero background"
         fill
         className="object-cover"

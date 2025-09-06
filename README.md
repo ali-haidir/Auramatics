@@ -325,14 +325,6 @@ We welcome contributions! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
 
-**AURAMATICS**
-
-- Website: [Your Website URL]
-- Email: [Your Email]
-- LinkedIn: [Your LinkedIn Profile]
-
----
 
 **Built with ❤️ by the AURAMATICS team**

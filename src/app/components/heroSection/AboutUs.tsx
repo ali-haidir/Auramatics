@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React, { forwardRef } from "react";
 import InfoCard from "../subComponents/InfoCard";
+import ProductDevelopment from "@/assets/aboutus/lightbulb-outline.svg";
+import CustomSolutions from "@/assets/aboutus/face-agent.svg";
+import DedicatedTeams from "@/assets/aboutus/account-group-outline.svg";
 
 const listItemsCards = [
   {
@@ -9,7 +12,7 @@ const listItemsCards = [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: (
       <Image
-        src="/images/Homepage/aboutus/lightbulb-outline.svg"
+        src={ProductDevelopment}
         alt="Product Development"
         width={60}
         height={60}
@@ -22,7 +25,7 @@ const listItemsCards = [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: (
       <Image
-        src="/images/Homepage/aboutus/face-agent.svg"
+        src={CustomSolutions}
         alt="Custom Solutions"
         width={60}
         height={60}
@@ -35,7 +38,7 @@ const listItemsCards = [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: (
       <Image
-        src="/images/Homepage/aboutus/account-group-outline.svg"
+        src={DedicatedTeams}
         alt="Dedicated Teams"
         width={60}
         height={60}

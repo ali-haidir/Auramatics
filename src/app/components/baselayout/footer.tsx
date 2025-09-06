@@ -5,6 +5,8 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import Link from "next/link";
+import Logo from "@/assets/NavBar/AURAMATICS_Nofil.jpeg";
+import Image from "next/image";
 
 const footerLinks = [
   {
@@ -60,10 +62,12 @@ const Footer = () => {
     <footer className="pt-12 px-6 w-full md:px-20 bg-[#0a1225] text-quaternary-gray text-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
         <div className="space-y-6 flex flex-col items-center">
-          <img
-            src="/images/NavBar/AURAMATICS_Nofil.jpeg"
+          <Image
+            src={Logo}
             alt="AURAMATICS Logo"
             className="h-16"
+            height={64}
+            width={64}
           />
           <p className="text-base font-bold leading-6 text-center">
             AURAMATICS | Data & AI Solutions

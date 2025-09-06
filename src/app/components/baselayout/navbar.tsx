@@ -1,8 +1,9 @@
 "use client";
-// import Logo from "@/public/images/NavBar/AURAMATICS_Nofil.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
+import Logo from "@/assets/NavBar/AURAMATICS_Nofil.jpeg";
 
 type NavbarProps = {
   heroRef: React.RefObject<HTMLDivElement> | null;
@@ -72,13 +73,7 @@ export default function Navbar({
       {/* Logo */}
       <div className="flex items-center">
         <Link href="/">
-          <Image
-            src={"/images/NavBar/AURAMATICS_Nofil.jpeg"}
-            alt="Logo"
-            width={40}
-            height={40}
-            priority
-          />
+          <Image src={Logo} alt="Logo" width={40} height={40} priority />
         </Link>
       </div>
 

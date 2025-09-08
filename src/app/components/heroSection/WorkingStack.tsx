@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaUbuntu,
   FaDocker,
@@ -197,13 +199,22 @@ export default function WorkingStack() {
             >
               {/* Technology Icon */}
               <div className="relative">
-                <div className="bg-white  rounded-xl p-4 w-16 h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-300">
+                <motion.div
+                  className="bg-white  rounded-xl p-4 w-16 h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-300"
+                  animate={{ y: [0, -22, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "easeInOut",
+                    delay: index * 0.08,
+                  }}
+                >
                   <div
                     className={`${tech.color} group-hover:scale-110 transition-transform duration-300`}
                   >
                     {tech.icon}
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Technology Name */}

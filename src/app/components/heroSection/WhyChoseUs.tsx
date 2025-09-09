@@ -26,7 +26,7 @@ const whyChooseUsData = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-10 px-6 md:px-10 lg:p-20 space-y-8">
+    <section className="py-10 px-6 md:px-10 lg:p-20 space-y-8 bg-white">
       {/* Header Section */}
       <div className="text-center space-y-4 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl lg:text-[64px] leading-[100%] text-[#011632] font-bold">

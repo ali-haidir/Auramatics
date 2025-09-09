@@ -55,7 +55,7 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       ref={ref}
-      className="pt-16 pb-10 px-6 md:px-10 lg:pt-20 lg:pb-20 space-y-6"
+      className="pt-16 pb-10 px-6 md:px-10 lg:pt-20 lg:pb-20 space-y-6 bg-white min-h-screen"
     >
       <h2 className="text-4xl md:text-5xl lg:text-[64px]  leading-[100%] font-bold text-center text-[#011632]">
         Service We Offer

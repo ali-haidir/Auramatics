@@ -43,7 +43,7 @@ const industries = [
 
 export default function IndustrySection() {
   return (
-    <section className="py-10 px-6 md:px-10 lg:p-20 space-y-6">
+    <section className="py-10 px-6 md:px-10 lg:p-20 space-y-6 bg-gray-50">
       <h2 className="text-4xl md:5xl lg:text-[64px] leading-[100%] text-[#011632] font-bold text-center">
         Industries We Serve
       </h2>

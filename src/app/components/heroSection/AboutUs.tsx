@@ -57,7 +57,7 @@ const AboutUS = forwardRef<HTMLDivElement, Props>(
     return (
       <section
         ref={ref}
-        className="px-4 py-16 sm:px-6 md:px-10 lg:px-20 lg:py-24"
+        className="px-4 py-16 sm:px-6 md:px-10 lg:px-20 lg:py-20 bg-gray-50"
       >
         <div className="text-center space-y-4 mb-10 max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-[56px] leading-tight text-[#011632] font-bold">

@@ -5,7 +5,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import Link from "next/link";
-import Logo from "@/assets/NavBar/AURAMATICS_Nofil.jpeg";
+import Logo from "@/assets/Homepage/logo_new.png";
 import Image from "next/image";
 
 const footerLinks = [
@@ -65,9 +65,9 @@ const Footer = () => {
           <Image
             src={Logo}
             alt="AURAMATICS Logo"
-            className="h-16"
-            height={64}
-            width={64}
+            className="h-24 w-auto"
+            height={96}
+            width={96}
           />
           <p className="text-base font-bold leading-6 text-center">
             AURAMATICS | Data & AI Solutions
@@ -87,24 +87,41 @@ const Footer = () => {
           </div>
         </div>
 
-        {footerLinks.map((section, idx) => (
-          <div key={idx} className="space-y-6 flex flex-col items-center">
-            <h4 className="text-sk-orange font-semibold text-lg">
-              {section.title}
-            </h4>
-            <ul
-              className={`text-sm font-bold ${section.listClass} text-center`}
-            >
-              {section.items.map((item, i) => (
-                <li key={i} className="mb-2">
-                  <Link href={item.url} className="hover:text-sk-orange">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* Services Section */}
+        <div className="space-y-6 flex flex-col items-center mt-4">
+          <h4 className="text-sk-orange font-semibold text-lg">
+            {footerLinks[0].title}
+          </h4>
+          <ul
+            className={`text-sm font-bold ${footerLinks[0].listClass} text-center`}
+          >
+            {footerLinks[0].items.map((item, i) => (
+              <li key={i} className="mb-2">
+                <Link href={item.url} className="hover:text-sk-orange">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact Section */}
+        <div className="space-y-6 flex flex-col items-center mt-12">
+          <h4 className="text-sk-orange font-semibold text-lg">
+            {footerLinks[1].title}
+          </h4>
+          <ul
+            className={`text-sm font-bold ${footerLinks[1].listClass} text-center`}
+          >
+            {footerLinks[1].items.map((item, i) => (
+              <li key={i} className="mb-2">
+                <Link href={item.url} className="hover:text-sk-orange">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="text-center py-8 text-xs md:text-sm font-bold text-quaternary-gray max-w-7xl mx-auto">

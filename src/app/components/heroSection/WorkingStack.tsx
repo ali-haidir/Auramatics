@@ -173,7 +173,7 @@ const technologyStack = [
 
 export default function WorkingStack() {
   return (
-    <section className="py-10 px-6 md:px-10 lg:p-20 space-y-8">
+    <section className="py-10 px-6 md:px-10 lg:p-20 space-y-8 bg-gray-50 min-h-screen">
       {/* Header Section */}
       <div className="text-center space-y-4 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl lg:text-[64px] leading-[100%] text-[#011632] font-bold">

@@ -44,14 +44,14 @@ export default function Home() {
         }
       />
 
-      {/* <Floating3DObject /> */}
+      <Floating3DObject />
 
       <Services ref={servicesRef} />
 
       <IndustrySection />
       <WhyChoseUs />
       <WorkingStack />
-      <AbstractLogoSection />
+      {/* <AbstractLogoSection /> */}
       <Footer />
     </div>
   );

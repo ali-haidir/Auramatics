@@ -60,8 +60,15 @@ const socialIcons = [
 
 const Footer = () => {
   return (
-    <footer className="pt-12 px-6 w-full md:px-20 bg-[#0a1225] text-quaternary-gray text-center">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+    <footer className="relative pt-12 px-6 w-full md:px-20 bg-[#0a1225] text-quaternary-gray text-center overflow-hidden">
+      {/* Animated background circles */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
         <div className="space-y-6 flex flex-col items-center">
           <div className="flex items-center justify-center">
             <Image

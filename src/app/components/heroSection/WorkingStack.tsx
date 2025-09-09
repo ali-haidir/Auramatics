@@ -200,7 +200,7 @@ export default function WorkingStack() {
               {/* Technology Icon */}
               <div className="relative">
                 <motion.div
-                  className="bg-white  rounded-xl p-4 w-16 h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-300"
+                  className="bg-white  rounded-xl p-4 w-16 h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-250"
                   animate={{ y: [0, -22, 0] }}
                   transition={{
                     repeat: Infinity,

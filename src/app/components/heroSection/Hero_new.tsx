@@ -1,7 +1,9 @@
 // components/Hero_new.tsx
+"use client";
 import React, { forwardRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import HeroBg from "@/assets/Homepage/background.png";
 import LogoImage from "@/assets/Homepage/logo_new.png";
@@ -49,6 +51,7 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         {/* Stats Section */}
+
         <StatsSection />
       </div>
 
@@ -81,35 +84,39 @@ const StatsSection = () => {
     {
       number: "120+",
       label: "Projects Delivered",
-      delay: "0ms",
     },
     {
       number: "10+",
       label: "Years Experience",
-      delay: "200ms",
     },
     {
       number: "95%",
       label: "Client Satisfaction",
-      delay: "400ms",
     },
   ];
 
   return (
     <div className="flex flex-col sm:flex-row gap-3 pt-8 max-w-xl">
       {stats.map((stat, index) => (
-        <div
+        <motion.div
           key={index}
-          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 w-40 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105"
-          style={{
-            animation: `fadeInUp 0.6s ease-out ${stat.delay} both`,
+          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 w-40 text-center hover:bg-white/20 transition-all duration-200 hover:scale-105"
+          animate={{
+            y: [0, -20, 0, -20, 0],
+            scale: [1, 1.05, 1, 1.05, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut",
+            delay: index * 0.3, // Creates wave effect with 0.3s delay between each card
           }}
         >
           <div className="text-2xl md:text-3xl font-bold text-white mb-1">
             {stat.number}
           </div>
           <div className="text-sm md:text-base text-gray-200">{stat.label}</div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

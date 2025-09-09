@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import ServiceFeatureCard from "../subComponents/serviceFeatureCard";
-
 import { FaDatabase } from "react-icons/fa6";
 import { TbBrandDatabricks } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";

@@ -1,7 +1,8 @@
+"use client";
 // import { style } from "framer-motion/client";
 import React from "react";
 // import { IoArrowForward } from "react-icons/io5";
-
+import { motion } from "framer-motion";
 interface ServiceFeatureCardProps {
   title: string;
   subtitle?: string;
@@ -28,7 +29,18 @@ const ServiceFeatureCard = ({
       } transition-all duration-200`}
       style={{ backgroundColor: `${bg}` }}
     >
-      <div className="h-12 w-12 text-3xl text-[#2596be]">{icon}</div>
+      <motion.div
+        className=" rounded-xl p-4 w-16 h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-500"
+        animate={{ x: [0, +220, 0] }}
+        transition={{
+          repeat: Infinity,
+          duration: 2,
+          ease: "easeInOut",
+          delay: 0.08,
+        }}
+      >
+        <div className="h-12 w-12 text-5xl text-[#2596be] ">{icon}</div>{" "}
+      </motion.div>
       <div className="flex flex-col gap-2">
         <h4 className="font-bold text-xl leading-[30px] text-[#011632]">
           {title}

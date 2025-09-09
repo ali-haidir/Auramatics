@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
           {whyChooseUsData.map((item, index) => (
             <div key={index} className="flex flex-col items-center space-y-4">
               {/* Icon Card */}
-              <div className="relative z-10 bg-white border-2 border-[#8B5CF6] rounded-lg p-4 w-16 h-16 flex items-center justify-center">
+              <div className="relative z-10 bg-white border-2 border-purple-800 rounded-lg p-4 w-16 h-16 flex items-center justify-center">
                 <div className="text-[#2596be]">{item.icon}</div>
               </div>
 

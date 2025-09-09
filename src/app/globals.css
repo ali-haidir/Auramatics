@@ -36,3 +36,51 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Step rotation animation for logo */
+@keyframes stepRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(120deg);
+  }
+  25.1%,
+  50% {
+    transform: rotate(120deg);
+  }
+  75% {
+    transform: rotate(240deg);
+  }
+  75.1%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 3D Perspective and Effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Gradient borders */
+.border-gradient-to-r {
+  border-image: linear-gradient(45deg, #ec4899, #9333ea, #3b82f6) 1;
+}
+
+/* Enhanced glow effects */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5),
+      0 0 40px rgba(147, 51, 234, 0.3), 0 0 60px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.8),
+      0 0 60px rgba(147, 51, 234, 0.5), 0 0 90px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.glow-animation {
+  animation: glow 3s ease-in-out infinite;
+}

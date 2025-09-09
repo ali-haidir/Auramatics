@@ -5,9 +5,11 @@ import { useRef } from "react";
 import Hero_new from "./components/heroSection/Hero_new";
 import AboutUS from "./components/heroSection/AboutUs";
 import Services from "./components/heroSection/Services";
+import Floating3DObject from "./components/subComponents/Floating3DObject";
 import IndustrySection from "./components/heroSection/ServedIndustries";
 import WhyChoseUs from "./components/heroSection/WhyChoseUs";
 import WorkingStack from "./components/heroSection/WorkingStack";
+import AbstractLogoSection from "./components/heroSection/AbstractLogoSection";
 import Footer from "./components/baselayout/footer";
 // import Hero from "./components/heroSection/Hero";
 
@@ -42,11 +44,14 @@ export default function Home() {
         }
       />
 
+      {/* <Floating3DObject /> */}
+
       <Services ref={servicesRef} />
 
       <IndustrySection />
       <WhyChoseUs />
       <WorkingStack />
+      <AbstractLogoSection />
       <Footer />
     </div>
   );

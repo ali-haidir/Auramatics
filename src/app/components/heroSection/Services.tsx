@@ -6,6 +6,7 @@ import { GiArtificialIntelligence } from "react-icons/gi";
 import { TbAutomation } from "react-icons/tb";
 import { MdOutlineWeb } from "react-icons/md";
 import { FaMobileAlt } from "react-icons/fa";
+import { RiAiGenerate2 } from "react-icons/ri";
 
 // change links here
 
@@ -27,7 +28,7 @@ const serviceFeatures = [
     title: "Data Science & AI",
     subtitle: "Harness the Power of AI.",
     description: "AI Agents, Process Automation, Intelligent Workflows.",
-    icon: <GiArtificialIntelligence />,
+    icon: <RiAiGenerate2 />,
   },
   {
     title: "Agentic AI & Automation",

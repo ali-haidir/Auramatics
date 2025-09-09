@@ -7,6 +7,7 @@ import {
 import Link from "next/link";
 import Logo from "@/assets/Homepage/logo_new.png";
 import Image from "next/image";
+// import AbstractLogo from "@/assets/Homepage/abstract_logo.png";
 
 const footerLinks = [
   {
@@ -62,13 +63,19 @@ const Footer = () => {
     <footer className="pt-12 px-6 w-full md:px-20 bg-[#0a1225] text-quaternary-gray text-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
         <div className="space-y-6 flex flex-col items-center">
-          <Image
-            src={Logo}
-            alt="AURAMATICS Logo"
-            className="h-24 w-auto"
-            height={96}
-            width={96}
-          />
+          <div className="flex items-center justify-center">
+            <Image
+              src={Logo}
+              alt="AURAMATICS Logo"
+              className="h-24 w-24"
+              style={{
+                animation: "stepRotate 7s infinite linear",
+                transformOrigin: "center center",
+              }}
+              height={96}
+              width={96}
+            />
+          </div>
           <p className="text-base font-bold leading-6 text-center">
             AURAMATICS | Data & AI Solutions
             <br />

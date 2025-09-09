@@ -57,7 +57,7 @@ const AboutUS = forwardRef<HTMLDivElement, Props>(
     return (
       <section
         ref={ref}
-        className="px-4 py-10 sm:px-6 md:px-10 lg:px-20 lg:py-20"
+        className="px-4 py-16 sm:px-6 md:px-10 lg:px-20 lg:py-24"
       >
         <div className="text-center space-y-4 mb-10 max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-[56px] leading-tight text-[#011632] font-bold">
@@ -69,7 +69,7 @@ const AboutUS = forwardRef<HTMLDivElement, Props>(
         </div>
 
         {/* Info Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {listItemsCards.map((item, idx) => (
             <InfoCard
               key={idx}

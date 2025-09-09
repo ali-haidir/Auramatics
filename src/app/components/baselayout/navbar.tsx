@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import Logo from "@/assets/NavBar/AURAMATICS_Nofil.jpeg";
+import Logo from "@/assets/Homepage/logo_new.png";
 
 type NavbarProps = {
   heroRef: React.RefObject<HTMLDivElement> | null;
@@ -66,14 +66,14 @@ export default function Navbar({
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 px-6 py-4 flex justify-between items-center shadow-sm rounded-md transition-colors duration-300 ${
+      className={`w-full fixed top-0 left-0 z-50 px-6 py-2 flex justify-between items-center shadow-sm rounded-md transition-colors duration-300 ${
         isScrolled ? "bg-white backdrop-blur-md text-black" : "bg-transparent"
       }`}
     >
       {/* Logo */}
       <div className="flex items-center">
         <Link href="/">
-          <Image src={Logo} alt="Logo" width={40} height={40} priority />
+          <Image src={Logo} alt="Logo" width={60} height={60} priority />
         </Link>
       </div>
 
@@ -107,7 +107,7 @@ export default function Navbar({
           e.preventDefault();
           scrollToSection("contact");
         }}
-        className="hidden md:inline-block bg-[#2596be] text-black font-semibold py-2 px-4 rounded-md shadow hover:bg-[#5c5ccd] transition"
+        className="hidden md:inline-block bg-gradient-to-r from-blue-500 to-purple-900 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300"
       >
         Get in Touch
       </button>
@@ -167,7 +167,7 @@ export default function Navbar({
               e.preventDefault();
               scrollToSection("contact");
             }}
-            className="w-full bg-[#2596be] text-black font-semibold py-2 px-4 rounded-md shadow hover:bg-[#5c5ccd] transition"
+            className="w-full bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300"
           >
             Get in Touch
           </button>

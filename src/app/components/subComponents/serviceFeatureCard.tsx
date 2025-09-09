@@ -21,14 +21,14 @@ const ServiceFeatureCard = ({
 }: ServiceFeatureCardProps) => {
   return (
     <div
-      className={`rounded-xl flex flex-col  justify-between gap-2 h-80 py-8 px-5  ${
+      className={`rounded-xl flex flex-col justify-between gap-3 h-72 py-6 px-4 ${
         isHighlighted
           ? "border-[#2596be] border-2 bg-[#FFFDF5]"
           : "border-[#E7E7E7] border bg-white"
       } transition-all duration-200`}
       style={{ backgroundColor: `${bg}` }}
     >
-      <div className="h-16 w-16 text-4xl text-[#2596be]">{icon}</div>
+      <div className="h-12 w-12 text-3xl text-[#2596be]">{icon}</div>
       <div className="flex flex-col gap-2">
         <h4 className="font-bold text-xl leading-[30px] text-[#011632]">
           {title}

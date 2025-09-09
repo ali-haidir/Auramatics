@@ -53,7 +53,10 @@ const serviceFeatures = [
 
 const Services = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section ref={ref} className=" py-10 px-6 md:px-10 lg:p-20 space-y-6">
+    <section
+      ref={ref}
+      className="pt-16 pb-10 px-6 md:px-10 lg:pt-20 lg:pb-20 space-y-6"
+    >
       <h2 className="text-4xl md:text-5xl lg:text-[64px]  leading-[100%] font-bold text-center text-[#011632]">
         Service We Offer
       </h2>
@@ -61,17 +64,19 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
         Explore what we can do for you.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {serviceFeatures.map((service, index) => (
-          <ServiceFeatureCard
-            key={index}
-            title={service.title}
-            subtitle={service.subtitle}
-            description={service.description}
-            icon={service.icon}
-            isHighlighted={service.isHighlighted}
-          />
-        ))}
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {serviceFeatures.map((service, index) => (
+            <ServiceFeatureCard
+              key={index}
+              title={service.title}
+              subtitle={service.subtitle}
+              description={service.description}
+              icon={service.icon}
+              isHighlighted={service.isHighlighted}
+            />
+          ))}
+        </div>
       </div>
       <button
         // onClick={(e) => {

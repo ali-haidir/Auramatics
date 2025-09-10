@@ -7,8 +7,6 @@ import { MdOutlineWeb } from "react-icons/md";
 import { FaMobileAlt } from "react-icons/fa";
 import { RiAiGenerate2 } from "react-icons/ri";
 
-// change links here
-
 const serviceFeatures = [
   {
     title: "Data Engineering",
@@ -21,7 +19,7 @@ const serviceFeatures = [
   {
     title: "Data Analysis & Visualization",
     subtitle:
-      "TEmpower smarter decision-making with BI dashboards, custom reporting, and interactive visualizations tailored to your business goals.",
+      "Empower smarter decision-making with BI dashboards, custom reporting, and interactive visualizations tailored to your business goals.",
     description: "BI Dashboards, Custom Reporting, Storytelling with Data.",
     icon: <TbBrandDatabricks />,
   },
@@ -59,11 +57,12 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       ref={ref}
+      id="our-services"
       className="pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 lg:pb-20 px-4 sm:px-6 md:px-10 space-y-6 sm:space-y-8 bg-white min-h-screen"
     >
       <div className="text-center space-y-4 sm:space-y-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-[100%] font-bold text-[#011632]">
-          Service We Offer
+          Services We Offer
         </h2>
         <p className="text-lg sm:text-xl lg:text-2xl leading-6 sm:leading-8 text-[#3C4959] max-w-3xl mx-auto px-4">
           Explore what we can do for you.

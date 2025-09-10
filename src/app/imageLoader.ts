@@ -10,5 +10,8 @@ export default function imageLoader({
   const isGithubPages = process.env.GITHUB_ACTIONS === "true";
   const basePath = isGithubPages ? "/Auramatics" : "";
 
-  return `${basePath}${src}?w=${width}&q=${quality || 75}`;
+  // Optimize quality based on width
+  const optimizedQuality = width > 800 ? quality || 85 : quality || 75;
+
+  return `${basePath}${src}?w=${width}&q=${optimizedQuality}`;
 }

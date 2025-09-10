@@ -1,4 +1,3 @@
-// components/Hero_new.tsx
 "use client";
 import React, { forwardRef } from "react";
 import Link from "next/link";
@@ -42,11 +41,18 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
                 Get a Free Consultation
               </button>
             </Link>
-            <Link href="/portfolio" passHref>
-              <button className="w-full sm:w-auto border-2 border-white text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm sm:text-base">
-                See Our Work
-              </button>
-            </Link>
+
+            <button
+              onClick={() => {
+                const servicesSection = document.getElementById("our-services");
+                if (servicesSection) {
+                  servicesSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="w-full sm:w-auto border-2 border-white text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm sm:text-base"
+            >
+              See Our Work
+            </button>
           </div>
         </div>
 

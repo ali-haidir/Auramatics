@@ -8,17 +8,17 @@ const whyChooseUsData = [
     icon: <FaSearch className="w-6 h-6" />,
   },
   {
-    title: "Custom Solutions ",
+    title: "Custom Solutions",
     description: "Tailored to your needs.",
     icon: <FaCogs className="w-6 h-6" />,
   },
   {
-    title: "Scalable Architecture ",
+    title: "Scalable Architecture",
     description: "Future-proof designs.",
     icon: <FaPaperPlane className="w-6 h-6" />,
   },
   {
-    title: "End-to-End Delivery ",
+    title: "End-to-End Delivery",
     description: "From concept to deployment.",
     icon: <FaPencilAlt className="w-6 h-6" />,
   },

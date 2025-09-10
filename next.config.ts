@@ -15,6 +15,23 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./src/app/imageLoader.ts",
   },
+  // Performance optimizations
+  experimental: {
+    optimizePackageImports: ["react-icons", "framer-motion"],
+  },
+  compiler: {
+    removeConsole: isProd,
+  },
+  // Bundle optimization
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

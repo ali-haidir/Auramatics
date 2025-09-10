@@ -1,7 +1,7 @@
 "use client";
 
-import Navbar from "./components/baselayout/navbar";
 import { useRef } from "react";
+import Navbar from "./components/baselayout/navbar";
 import Hero_new from "./components/heroSection/Hero_new";
 import AboutUS from "./components/heroSection/AboutUs";
 import Services from "./components/heroSection/Services";
@@ -10,18 +10,12 @@ import IndustrySection from "./components/heroSection/ServedIndustries";
 import WhyChoseUs from "./components/heroSection/WhyChoseUs";
 import WorkingStack from "./components/heroSection/WorkingStack";
 import Footer from "./components/baselayout/footer";
-// import Hero from "./components/heroSection/Hero";
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
-  // const officesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-
-  // #2596be   nav background colour
-
-  // #EBF5FB highlight colour about us
   return (
     <div className="bg-[#FFFFFF]">
       <Navbar
@@ -30,7 +24,6 @@ export default function Home() {
         contactRef={contactRef as React.RefObject<HTMLDivElement>}
         heroRef={heroRef as React.RefObject<HTMLDivElement>}
       />
-      {/* <Hero ref={heroRef} /> */}
       <Hero_new ref={heroRef} />
       <AboutUS
         ref={aboutRef}
@@ -50,7 +43,6 @@ export default function Home() {
       <IndustrySection />
       <WhyChoseUs />
       <WorkingStack />
-      {/* <AbstractLogoSection /> */}
       <Footer />
     </div>
   );

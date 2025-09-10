@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: "out",
-  basePath: isGithubPages ? "/auramatics_nofil" : "",
-  assetPrefix: isGithubPages ? "/auramatics_nofil/" : "",
+  basePath: isGithubPages ? "/Auramatics" : "",
+  assetPrefix: isGithubPages ? "/Auramatics/" : "",
   images: {
     unoptimized: true,
     loader: "custom",

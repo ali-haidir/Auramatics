@@ -8,7 +8,7 @@ export default function imageLoader({
   quality?: number;
 }) {
   const isGithubPages = process.env.GITHUB_ACTIONS === "true";
-  const basePath = isGithubPages ? "/auramatics_nofil" : "";
+  const basePath = isGithubPages ? "/Auramatics" : "";
 
   return `${basePath}${src}?w=${width}&q=${quality || 75}`;
 }

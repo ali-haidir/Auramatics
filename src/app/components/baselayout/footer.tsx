@@ -8,7 +8,6 @@ import {
 import Link from "next/link";
 import Logo from "@/assets/Homepage/logo_new.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
 // import AbstractLogo from "@/assets/Homepage/abstract_logo.png";
 
 const footerLinks = [
@@ -73,26 +72,13 @@ const Footer = () => {
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
         <div className="space-y-6 flex flex-col items-center">
           <div className="flex items-center justify-center w-24 h-24 relative">
-            <motion.div
-              animate={{
-                rotate: [0, 120, 240, 360, 480],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear",
-                times: [0, 0.25, 0.5, 0.75, 1],
-              }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            >
-              <Image
-                src={Logo}
-                alt="AURAMATICS Logo"
-                className="h-24 w-24"
-                height={96}
-                width={96}
-              />
-            </motion.div>
+            <Image
+              src={Logo}
+              alt="AURAMATICS Logo"
+              className="h-24 w-24"
+              height={96}
+              width={96}
+            />
           </div>
           <p className="text-base font-bold leading-6 text-center">
             AURAMATICS | Data & AI Solutions

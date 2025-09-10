@@ -6,10 +6,17 @@ const Floating3DObject = () => {
   return (
     <div className="relative w-full h-0 flex justify-end items-center pr-8">
       <motion.div
-        initial={{ opacity: 0, scale: 0.8, y: 30 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-50"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          opacity: { duration: 0.8, ease: "easeOut" },
+          scale: { duration: 0.8, ease: "easeOut" },
+          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+        }}
+        className="relative z-10"
         style={{ marginTop: "20px" }}
       >
         {/* Simple Elegant Object */}

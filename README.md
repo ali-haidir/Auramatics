@@ -1,6 +1,20 @@
-# AURAMATICS - Technology Solutions Company
+# AURAMATICS - Data & AI Solutions
 
-A modern, responsive website for AURAMATICS, a technology solutions company specializing in data engineering, AI, and custom software development. Built with Next.js 15 and TypeScript.
+<div align="center">
+
+![AURAMATICS Logo](public/images/NavBar/AURAMATICS_Nofil.jpeg)
+
+**Transforming businesses with intelligent technology**
+
+[![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.12-pink?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+
+</div>
+
+A modern, responsive website for AURAMATICS, a technology solutions company specializing in data engineering, AI, and custom software development. Built with Next.js 15, TypeScript, and enhanced with Framer Motion animations.
 
 ## 🚀 Live Demo
 
@@ -10,6 +24,7 @@ A modern, responsive website for AURAMATICS, a technology solutions company spec
 
 - [About](#about)
 - [Features](#features)
+- [Architecture Flow](#architecture-flow)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
@@ -39,6 +54,57 @@ AURAMATICS is a technology solutions company that creates intelligent ecosystems
 - **Technology Showcase**: Comprehensive display of our technology stack
 - **Industry Focus**: Dedicated sections for different industries we serve
 - **Contact Integration**: Easy-to-use contact forms and call-to-action buttons
+- **Interactive Animations**: Smooth Framer Motion animations throughout the site
+- **Responsive Map Integration**: Google Maps integration with location markers
+
+## 🏗️ Architecture Flow
+
+```mermaid
+graph TB
+    A[User Visits Website] --> B[Next.js App Router]
+    B --> C[Layout Component]
+    C --> D[Navbar Component]
+    C --> E[Main Page Content]
+    C --> F[Footer Component]
+
+    E --> G[Hero Section]
+    E --> H[About Us Section]
+    E --> I[Services Section]
+    E --> J[Industries Section]
+    E --> K[Why Choose Us]
+    E --> L[Working Stack]
+    E --> M[Contact Page]
+
+    G --> N[Framer Motion Animations]
+    H --> N
+    I --> N
+    J --> N
+    K --> N
+    L --> N
+    M --> N
+
+    I --> O[Service Cards]
+    J --> P[Industry Cards]
+
+    O --> Q[Interactive Hover Effects]
+    P --> Q
+
+    M --> R[Contact Form]
+    M --> S[Google Maps Integration]
+
+    R --> T[Form Validation]
+    S --> U[Location Marker]
+
+    F --> V[Rotating Logo Animation]
+    F --> W[Social Media Links]
+
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style N fill:#fff3e0
+    style Q fill:#e8f5e8
+    style T fill:#fce4ec
+    style U fill:#f1f8e9
+```
 
 ## 🛠 Technologies Used
 
@@ -54,6 +120,7 @@ AURAMATICS is a technology solutions company that creates intelligent ecosystems
 - **Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
 - **PostCSS** - CSS processing tool for Tailwind CSS
 - **React Icons 5.5.0** - Popular icon library with 10,000+ icons
+- **Framer Motion 12.23.12** - Production-ready motion library for React
 - **Custom CSS** - Additional styling for specific components
 
 ### Development Tools
@@ -84,7 +151,8 @@ AURAMATICS is a technology solutions company that creates intelligent ecosystems
   "next": "15.5.2",
   "react": "19.1.0",
   "react-dom": "19.1.0",
-  "react-icons": "^5.5.0"
+  "react-icons": "^5.5.0",
+  "framer-motion": "^12.23.12"
 }
 ```
 
@@ -170,38 +238,54 @@ AURAMATICS is a technology solutions company that creates intelligent ecosystems
 ## 📁 Project Structure
 
 ```
-AURAMATICS_Nofil/
+auramatics_nofil/
 ├── public/
 │   └── images/
 │       ├── Homepage/
 │       │   ├── aboutus/
+│       │   │   ├── account-group-outline.svg
+│       │   │   ├── face-agent.svg
+│       │   │   └── lightbulb-outline.svg
 │       │   ├── hero-bg.png
 │       │   └── image.png
 │       └── NavBar/
 │           └── AURAMATICS_Nofil.jpeg
 ├── src/
-│   └── app/
-│       ├── components/
-│       │   ├── baselayout/
-│       │   │   ├── footer.tsx
-│       │   │   └── navbar.tsx
-│       │   ├── heroSection/
-│       │   │   ├── AboutUs.tsx
-│       │   │   ├── Hero.tsx
-│       │   │   ├── ServedIndustries.tsx
-│       │   │   ├── Services.tsx
-│       │   │   ├── WhyChoseUs.tsx
-│       │   │   └── WorkingStack.tsx
-│       │   └── subComponents/
-│       │       ├── IndustryCard.tsx
-│       │       ├── InfoCard.tsx
-│       │       └── serviceFeatureCard.tsx
-│       ├── globals.css
-│       ├── layout.tsx
-│       └── page.tsx
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── baselayout/
+│   │   │   │   ├── footer.tsx
+│   │   │   │   └── navbar.tsx
+│   │   │   ├── ContactUs/
+│   │   │   ├── heroSection/
+│   │   │   │   ├── AboutUs.tsx
+│   │   │   │   ├── AbstractLogoSection.tsx
+│   │   │   │   ├── Hero_new.tsx
+│   │   │   │   ├── Hero.tsx
+│   │   │   │   ├── ServedIndustries.tsx
+│   │   │   │   ├── Services.tsx
+│   │   │   │   ├── WhyChoseUs.tsx
+│   │   │   │   └── WorkingStack.tsx
+│   │   │   └── subComponents/
+│   │   │       ├── Floating3DObject.tsx
+│   │   │       ├── IndustryCard.tsx
+│   │   │       ├── InfoCard.tsx
+│   │   │       └── serviceFeatureCard.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   └── assets/
+│       ├── aboutus/
+│       ├── AURAMATICS/
+│       ├── Homepage/
+│       └── NavBar/
 ├── package.json
 ├── next.config.ts
+├── postcss.config.mjs
 ├── tailwind.config.js
+├── tsconfig.json
 └── README.md
 ```
 
@@ -305,11 +389,57 @@ AURAMATICS_Nofil/
 - **Gray**: `#3C4959` - Secondary text
 - **White**: `#FFFFFF` - Background and contrast
 - **Purple**: `#8B5CF6` - Accent color
+- **Orange**: `#F97316` - Call-to-action color
 
 ### Typography
 
 - **Primary Font**: Geist Sans
 - **Monospace Font**: Geist Mono
+
+### Animation Features
+
+- **Framer Motion Integration**: Smooth page transitions and component animations
+- **Rotating Logo**: Continuous step rotation animation in footer
+- **Floating 3D Objects**: Interactive 3D elements with orbital animations
+- **Hover Effects**: Interactive card hover animations
+- **Scroll Animations**: Elements animate into view on scroll
+- **Form Interactions**: Smooth form validation and submission animations
+
+## 🗺️ Map Integration
+
+- **Google Maps Embed**: Interactive map with location markers
+- **Responsive Design**: Map adapts to different screen sizes
+- **Location Services**: Easy integration with business location data
+
+## 🚀 Deployment
+
+### Build for Production
+
+```bash
+npm run build
+npm run start
+```
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Deploy automatically with zero configuration
+
+### Deploy to Netlify
+
+1. Build the project: `npm run build`
+2. Deploy the `out` folder to Netlify
+3. Configure redirects for SPA routing
+
+### Environment Variables
+
+Create a `.env.local` file for local development:
+
+```env
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
 
 ## 🤝 Contributing
 
@@ -321,8 +451,30 @@ We welcome contributions! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Use Framer Motion for animations
+- Maintain responsive design principles
+- Test on multiple devices and browsers
+- Follow the existing code style and structure
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 📞 Contact
+
+- **Email**: contact@auramatics.com
+- **Website**: [AURAMATICS](https://auramatics.com)
+- **LinkedIn**: [AURAMATICS](https://linkedin.com/company/auramatics)
+
+---
+
+<div align="center">
+
 **Built with ❤️ by the AURAMATICS team**
+
+_Transforming businesses with intelligent technology_
+
+</div>

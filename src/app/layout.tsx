@@ -26,6 +26,16 @@ export const metadata: Metadata = {
   creator: "AURAMATICS",
   publisher: "AURAMATICS",
   robots: "index, follow",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-64x64.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon-32x32.png",
+    apple: "/favicon-64x64.png",
+  },
   openGraph: {
     title: "AURAMATICS - Data & AI Solutions",
     description: "Transforming businesses with intelligent technology",

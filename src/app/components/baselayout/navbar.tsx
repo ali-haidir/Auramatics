@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import Logo from "@/assets/Homepage/logo_new.png";
 
@@ -18,6 +19,7 @@ export default function Navbar({
   aboutRef,
   contactRef,
 }: NavbarProps) {
+  const router = useRouter();
   const [activeSection, setActiveSection] = useState("home");
   // Map section ids to their corresponding refs
   const sectionRefs: Record<string, React.RefObject<HTMLDivElement> | null> = {
@@ -43,6 +45,15 @@ export default function Navbar({
 
   // Function to scroll to a particular ref
   const scrollToSection = (sectionId: string) => {
+    // Check if we're on the contact page
+    const isOnContactPage = window.location.pathname === "/contact";
+
+    if (isOnContactPage && sectionId !== "contact") {
+      // If on contact page and not clicking contact, navigate to home page
+      router.push("/");
+      return;
+    }
+
     const ref = sectionRefs[sectionId];
     if (ref && ref.current) {
       const offset = 60;

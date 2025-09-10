@@ -8,7 +8,6 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import Navbar from "../components/baselayout/navbar";
-import Footer from "../components/baselayout/footer";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -301,7 +300,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/baselayout/navbar";
 import Footer from "../components/baselayout/footer";
@@ -104,8 +103,8 @@ export default function AboutUs() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              We don't just create technology — we create intelligent ecosystems
-              that drive growth and transform businesses.
+              We don&apos;t just create technology — we create intelligent
+              ecosystems that drive growth and transform businesses.
             </p>
           </div>
 
@@ -220,10 +219,10 @@ export default function AboutUs() {
                   Our Growth
                 </h3>
                 <p className="text-[#3C4959] leading-relaxed">
-                  Over the years, we've evolved from a small team of passionate
-                  engineers to a comprehensive data and AI solutions provider.
-                  Our expertise spans across industries, helping organizations
-                  of all sizes unlock their data's potential.
+                  Over the years, we&apos;ve evolved from a small team of
+                  passionate engineers to a comprehensive data and AI solutions
+                  provider. Our expertise spans across industries, helping
+                  organizations of all sizes unlock their data&apos;s potential.
                 </p>
               </div>
 
@@ -232,8 +231,8 @@ export default function AboutUs() {
                   Today & Beyond
                 </h3>
                 <p className="text-[#3C4959] leading-relaxed">
-                  We continue to push the boundaries of what's possible with
-                  data and AI, staying at the forefront of technological
+                  We continue to push the boundaries of what&apos;s possible
+                  with data and AI, staying at the forefront of technological
                   innovation while maintaining our commitment to delivering
                   practical, impactful solutions.
                 </p>
@@ -353,8 +352,8 @@ export default function AboutUs() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-            Let's discuss how our data and AI solutions can drive your success.
-            Get in touch with our team today.
+            Let&apos;s discuss how our data and AI solutions can drive your
+            success. Get in touch with our team today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

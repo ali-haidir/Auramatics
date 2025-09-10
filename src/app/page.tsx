@@ -9,7 +9,6 @@ import Floating3DObject from "./components/subComponents/Floating3DObject";
 import IndustrySection from "./components/heroSection/ServedIndustries";
 import WhyChoseUs from "./components/heroSection/WhyChoseUs";
 import WorkingStack from "./components/heroSection/WorkingStack";
-import AbstractLogoSection from "./components/heroSection/AbstractLogoSection";
 import Footer from "./components/baselayout/footer";
 // import Hero from "./components/heroSection/Hero";
 

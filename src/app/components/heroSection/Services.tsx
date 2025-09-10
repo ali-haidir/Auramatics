@@ -2,7 +2,6 @@ import React, { forwardRef } from "react";
 import ServiceFeatureCard from "../subComponents/serviceFeatureCard";
 import { FaDatabase } from "react-icons/fa6";
 import { TbBrandDatabricks } from "react-icons/tb";
-import { GiArtificialIntelligence } from "react-icons/gi";
 import { TbAutomation } from "react-icons/tb";
 import { MdOutlineWeb } from "react-icons/md";
 import { FaMobileAlt } from "react-icons/fa";
@@ -83,9 +82,8 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
         //   e.preventDefault();
         //   scrollToSection("contact");
         // }}
-       
+
         className="mx-auto block bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition text-center"
-        
       >
         See All Services
       </button>

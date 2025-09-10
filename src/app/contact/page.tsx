@@ -57,8 +57,8 @@ const ContactPage = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to transform your business with AI and data solutions? Let's
-            discuss how we can help you achieve your goals.
+            Ready to transform your business with AI and data solutions?
+            Let&apos;s discuss how we can help you achieve your goals.
           </p>
         </motion.div>
 
@@ -72,12 +72,12 @@ const ContactPage = () => {
           >
             <div>
               <h2 className="text-3xl font-bold text-white mb-8">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
               <p className="text-gray-300 text-lg mb-8">
-                We're here to help you navigate the world of AI and data. Reach
-                out to us and let's start a conversation about your next
-                project.
+                We&apos;re here to help you navigate the world of AI and data.
+                Reach out to us and let&apos;s start a conversation about your
+                next project.
               </p>
             </div>
 

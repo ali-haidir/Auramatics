@@ -83,7 +83,9 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
         //   e.preventDefault();
         //   scrollToSection("contact");
         // }}
-        className="mx-auto block bg-[#2596be] text-black font-semibold py-2 px-4 rounded-md shadow hover:bg-[#5c5ccd] transition text-center"
+       
+        className="mx-auto block bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition text-center"
+        
       >
         See All Services
       </button>

@@ -1,3 +1,5 @@
+import React from "react";
+
 interface IndustryCardProps {
   title: string;
   description: string;
@@ -18,7 +20,11 @@ const IndustryCard = ({
         : "bg-gray-200"
     } transition-all min-h-[144px]`}
   >
-    <div className="rounded-xl flex gap-3 p-5 bg-[#F3F9FC] h-full">
+    <div
+      className={`rounded-xl flex gap-3 p-5 ${
+        isHighlighted ? "bg-[#F3F9FC]" : "bg-white"
+      } h-full`}
+    >
       <div className="text-4xl text-black flex-shrink-0">{icon}</div>
       <div className="flex flex-col gap-2 flex-1">
         <h4 className="font-bold text-xl leading-[30px] text-[#011632]">

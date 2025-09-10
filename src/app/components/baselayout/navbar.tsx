@@ -102,15 +102,12 @@ export default function Navbar({
       </div>
 
       {/* Desktop Call to Action Button */}
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          scrollToSection("contact");
-        }}
+      <Link
+        href="/contact"
         className="hidden md:inline-block bg-gradient-to-r from-blue-500 to-purple-900 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300"
       >
         Get in Touch
-      </button>
+      </Link>
 
       {/* Hamburger Menu Button */}
       <button
@@ -162,15 +159,12 @@ export default function Navbar({
               {item.label}
             </button>
           ))}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("contact");
-            }}
-            className="w-full bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300"
+          <Link
+            href="/contact"
+            className="w-full bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300 text-center block"
           >
             Get in Touch
-          </button>
+          </Link>
         </div>
       )}
     </nav>

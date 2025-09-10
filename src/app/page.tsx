@@ -51,7 +51,7 @@ export default function Home() {
       <IndustrySection />
       <WhyChoseUs />
       <WorkingStack />
-      <AbstractLogoSection />
+      {/* <AbstractLogoSection /> */}
       <Footer />
     </div>
   );

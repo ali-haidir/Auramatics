@@ -54,17 +54,19 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       ref={ref}
-      className="pt-16 pb-10 px-6 md:px-10 lg:pt-20 lg:pb-20 space-y-6 bg-white min-h-screen"
+      className="pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 lg:pb-20 px-4 sm:px-6 md:px-10 space-y-6 sm:space-y-8 bg-white min-h-screen"
     >
-      <h2 className="text-4xl md:text-5xl lg:text-[64px]  leading-[100%] font-bold text-center text-[#011632]">
-        Service We Offer
-      </h2>
-      <p className="text-center text-2xl leading-8  text-[#3C4959]">
-        Explore what we can do for you.
-      </p>
+      <div className="text-center space-y-4 sm:space-y-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-[100%] font-bold text-[#011632]">
+          Service We Offer
+        </h2>
+        <p className="text-lg sm:text-xl lg:text-2xl leading-6 sm:leading-8 text-[#3C4959] max-w-3xl mx-auto px-4">
+          Explore what we can do for you.
+        </p>
+      </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {serviceFeatures.map((service, index) => (
             <ServiceFeatureCard
               key={index}
@@ -77,16 +79,12 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
           ))}
         </div>
       </div>
-      <button
-        // onClick={(e) => {
-        //   e.preventDefault();
-        //   scrollToSection("contact");
-        // }}
 
-        className="mx-auto block bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition text-center"
-      >
-        See All Services
-      </button>
+      <div className="flex justify-center pt-4 sm:pt-6">
+        <button className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-3 sm:py-2 px-6 sm:px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300 text-center text-sm sm:text-base">
+          See All Services
+        </button>
+      </div>
     </section>
   );
 });

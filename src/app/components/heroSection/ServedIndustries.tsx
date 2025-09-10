@@ -10,33 +10,39 @@ import IndustryCard from "../subComponents/IndustryCard";
 const industries = [
   {
     title: "Finance & Banking ",
-    description: "lorem ipsum",
+    description:
+      "Empowering financial institutions with secure, data-driven insights and AI-powered automation for smarter decision-making.",
     icon: <CiBadgeDollar />,
     isHighlighted: true,
   },
   {
     title: "Healthcare & Pharma ",
-    description: "lorem ipsum",
+    description:
+      "Enabling better patient outcomes and operational efficiency with advanced analytics, AI, and digital health platforms.",
     icon: <MdOutlineHealthAndSafety />,
   },
   {
     title: "Retail & eCommerce ",
-    description: "lorem ipsum d",
+    description:
+      "Boosting customer engagement and sales with AI-driven personalization, predictive analytics, and scalable digital storefronts.",
     icon: <CiShoppingTag />,
   },
   {
     title: "Power and Telecom",
-    description: "lorem ipsum d",
+    description:
+      "Optimizing networks and operations with automation, predictive maintenance, and intelligent data solutions.",
     icon: <IoPower />,
   },
   {
     title: "Aviation",
-    description: "lorem ipsum d",
+    description:
+      "Transforming aviation with AI, real-time data insights, and automation for safer, more efficient operations.",
     icon: <CiAirportSign1 />,
   },
   {
     title: "Manufacturing & Logistics ",
-    description: "lorem ipsum d",
+    description:
+      "lDriving efficiency with IoT, data pipelines, and AI to streamline supply chains and smart manufacturing processes.",
     icon: <MdPrecisionManufacturing />,
   },
 ];

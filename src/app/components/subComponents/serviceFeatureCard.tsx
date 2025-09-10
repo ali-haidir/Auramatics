@@ -31,7 +31,7 @@ const ServiceFeatureCard = ({
     >
       <motion.div
         className="rounded-xl p-3 sm:p-4 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-500"
-        animate={{ x: [0, +220, 0] }}
+        animate={{ x: [-160, +130, 0] }}
         transition={{
           repeat: Infinity,
           duration: 2,

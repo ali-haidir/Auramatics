@@ -43,13 +43,27 @@ export default function Navbar({
     };
   }, []);
 
-  // Function to scroll to a particular ref
+  // Function to scroll to a particular ref or navigate to page
   const scrollToSection = (sectionId: string) => {
     // Check if we're on the contact page
     const isOnContactPage = window.location.pathname === "/contact";
+    const isOnAboutPage = window.location.pathname === "/aboutus";
+
+    // Handle About page navigation
+    if (sectionId === "about") {
+      router.push("/aboutus");
+      setIsMobileMenuOpen(false);
+      return;
+    }
 
     if (isOnContactPage && sectionId !== "contact") {
       // If on contact page and not clicking contact, navigate to home page
+      router.push("/");
+      return;
+    }
+
+    if (isOnAboutPage && sectionId !== "about") {
+      // If on about page and not clicking about, navigate to home page
       router.push("/");
       return;
     }
@@ -71,7 +85,8 @@ export default function Navbar({
   const navItems = [
     { href: "#home", id: "home", label: "Home" },
     { href: "#our-services", id: "our-services", label: "Services" },
-    { href: "#about", id: "about", label: "About" },
+    // { href: "/aboutus", id: "about", label: "About" },
+    { href: "/aboutus", id: "about", label: "About" },
     // { href: "#contact", id: "contact", label: "Contact" },
   ];
 
@@ -163,6 +178,7 @@ export default function Navbar({
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(item.id);
+                setActiveSection(item.id);
               }}
               className="w-full text-left font-bold bg-transparent border-none outline-none cursor-pointer text-[#011632]"
               style={{ background: "none" }}

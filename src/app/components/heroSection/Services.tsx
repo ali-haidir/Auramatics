@@ -13,19 +13,22 @@ const serviceFeatures = [
   {
     title: "Data Engineering",
     subtitle: "Build Reliable Data Foundations.",
-    description: "Data Pipelines, ETL, Data Warehousing, Cloud Integration.",
+    description:
+      "We design and deploy modern data pipelines, warehouses, and cloud-native architectures that ensure scalability, security, and seamless integration for your business.",
     icon: <FaDatabase />,
     isHighlighted: true,
   },
   {
     title: "Data Analysis & Visualization",
-    subtitle: "Turn Complex Data into Actionable Insights.",
+    subtitle:
+      "TEmpower smarter decision-making with BI dashboards, custom reporting, and interactive visualizations tailored to your business goals.",
     description: "BI Dashboards, Custom Reporting, Storytelling with Data.",
     icon: <TbBrandDatabricks />,
   },
   {
     title: "Data Science & AI",
-    subtitle: "Harness the Power of AI.",
+    subtitle:
+      "From predictive analytics to NLP and computer vision, we build AI models that help you unlock opportunities, automate workflows, and stay ahead of the competition.",
     description: "AI Agents, Process Automation, Intelligent Workflows.",
     icon: <RiAiGenerate2 />,
   },
@@ -33,19 +36,21 @@ const serviceFeatures = [
     title: "Agentic AI & Automation",
     subtitle: "Automate. Optimize. Scale.",
     description:
-      "Comprehensive security reports documenting all activities, incidents, and observations during each shift to keep you informed.",
+      "Leverage intelligent AI agents and automation tools to streamline operations, reduce costs, and improve efficiency across your workflows.",
     icon: <TbAutomation />,
   },
   {
     title: "Web Development",
     subtitle: "Design & Develop for the Web.",
-    description: "Modern Websites, Web Apps, SaaS Platforms.",
+    description:
+      "We craft responsive websites, scalable SaaS platforms, and enterprise-grade web applications optimized for performance and user experience.",
     icon: <MdOutlineWeb />,
   },
   {
     title: "Mobile App Development",
     subtitle: "Your Business in Every Pocket.",
-    description: "Cross-platform apps, iOS & Android, Scalable backend.",
+    description:
+      "Develop robust cross-platform iOS and Android apps with seamless user experiences, powerful backends, and future-ready scalability.",
     icon: <FaMobileAlt />,
   },
 ];

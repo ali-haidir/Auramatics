@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
   preload: false,
 });
 
+const isGithubPages = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGithubPages ? "/Auramatics" : "";
+
 export const metadata: Metadata = {
   title: "AURAMATICS - Data & AI Solutions",
   description:
@@ -28,13 +31,25 @@ export const metadata: Metadata = {
   robots: "index, follow",
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-64x64.png", sizes: "64x64", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
+      {
+        url: `${basePath}/favicon-16x16.png`,
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: `${basePath}/favicon-32x32.png`,
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: `${basePath}/favicon-64x64.png`,
+        sizes: "64x64",
+        type: "image/png",
+      },
+      { url: `${basePath}/favicon.ico`, sizes: "any" },
     ],
-    shortcut: "/favicon-32x32.png",
-    apple: "/favicon-64x64.png",
+    shortcut: `${basePath}/favicon-32x32.png`,
+    apple: `${basePath}/favicon-64x64.png`,
   },
   openGraph: {
     title: "AURAMATICS - Data & AI Solutions",
@@ -51,6 +66,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={`${basePath}/favicon-32x32.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={`${basePath}/favicon-16x16.png`}
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="64x64"
+          href={`${basePath}/favicon-64x64.png`}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

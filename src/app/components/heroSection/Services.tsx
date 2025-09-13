@@ -18,16 +18,16 @@ const serviceFeatures = [
   },
   {
     title: "Data Analysis & Visualization",
-    subtitle:
+    subtitle: "Turn raw data into actionable insights.",
+    description:
       "Empower smarter decision-making with BI dashboards, custom reporting, and interactive visualizations tailored to your business goals.",
-    description: "BI Dashboards, Custom Reporting, Storytelling with Data.",
     icon: <TbBrandDatabricks />,
   },
   {
     title: "Data Science & AI",
-    subtitle:
+    subtitle: "Harness the power of artificial intelligence.",
+    description:
       "From predictive analytics to NLP and computer vision, we build AI models that help you unlock opportunities, automate workflows, and stay ahead of the competition.",
-    description: "AI Agents, Process Automation, Intelligent Workflows.",
     icon: <RiAiGenerate2 />,
   },
   {
@@ -84,11 +84,11 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
       </div>
 
-      <div className="flex justify-center pt-4 sm:pt-6">
+      {/* <div className="flex justify-center pt-4 sm:pt-6">
         <button className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold py-3 sm:py-2 px-6 sm:px-4 rounded-md shadow hover:from-blue-500 hover:to-purple-700 transition-all duration-300 text-center text-sm sm:text-base">
           See All Services
         </button>
-      </div>
+      </div> */}
     </section>
   );
 });

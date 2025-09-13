@@ -29,20 +29,10 @@ const ServiceFeatureCard = ({
       } transition-all duration-200`}
       style={{ backgroundColor: `${bg}` }}
     >
-      <motion.div
-        className="rounded-xl p-3 sm:p-4 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center group-hover:border-[#2596be] group-hover:shadow-lg transition-all duration-500"
-        animate={{ x: [-160, +130, 0] }}
-        transition={{
-          repeat: Infinity,
-          duration: 2,
-          ease: "easeInOut",
-          delay: 0.08,
-        }}
-      >
-        <div className="h-8 w-8 sm:h-12 sm:w-12 text-3xl sm:text-5xl text-[#2596be]">
-          {icon}
-        </div>
-      </motion.div>
+      <div className="h-8 w-8 sm:h-12 sm:w-12 text-3xl sm:text-5xl text-[#2596be]">
+        {icon}
+      </div>
+
       <div className="flex flex-col gap-1 sm:gap-2 items-center">
         <h4 className="font-bold text-lg sm:text-xl leading-[24px] sm:leading-[30px] text-[#011632]">
           {title}

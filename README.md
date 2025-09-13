@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![AURAMATICS Logo](public/images/NavBar/AURAMATICS_Nofil.jpeg)
+![AURAMATICS Logo](src/assets/Homepage/logo_new.png)
 
 **Transforming businesses with intelligent technology**
 
@@ -240,51 +240,48 @@ graph TB
 ```
 auramatics_nofil/
 ├── public/
-│   └── images/
-│       ├── Homepage/
-│       │   ├── aboutus/
-│       │   │   ├── account-group-outline.svg
-│       │   │   ├── face-agent.svg
-│       │   │   └── lightbulb-outline.svg
-│       │   ├── hero-bg.png
-│       │   └── image.png
-│       └── NavBar/
-│           └── AURAMATICS_Nofil.jpeg
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── favicon-64x64.png
+│   ├── favicon.png
+│   ├── 404.html
+│   └── index.html
 ├── src/
 │   ├── app/
 │   │   ├── components/
 │   │   │   ├── baselayout/
 │   │   │   │   ├── footer.tsx
 │   │   │   │   └── navbar.tsx
-│   │   │   ├── ContactUs/
 │   │   │   ├── heroSection/
 │   │   │   │   ├── AboutUs.tsx
-│   │   │   │   ├── AbstractLogoSection.tsx
 │   │   │   │   ├── Hero_new.tsx
-│   │   │   │   ├── Hero.tsx
 │   │   │   │   ├── ServedIndustries.tsx
 │   │   │   │   ├── Services.tsx
 │   │   │   │   ├── WhyChoseUs.tsx
 │   │   │   │   └── WorkingStack.tsx
 │   │   │   └── subComponents/
 │   │   │       ├── Floating3DObject.tsx
-│   │   │       ├── IndustryCard.tsx
-│   │   │       ├── InfoCard.tsx
 │   │   │       └── serviceFeatureCard.tsx
+│   │   ├── aboutus/
+│   │   │   └── page.tsx
 │   │   ├── contact/
 │   │   │   └── page.tsx
 │   │   ├── globals.css
+│   │   ├── imageLoader.ts
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   └── assets/
 │       ├── aboutus/
-│       ├── AURAMATICS/
-│       ├── Homepage/
-│       └── NavBar/
+│       │   ├── account-group-outline.svg
+│       │   ├── face-agent.svg
+│       │   └── lightbulb-outline.svg
+│       └── Homepage/
+│           ├── background.png
+│           └── logo_new.png
 ├── package.json
 ├── next.config.ts
 ├── postcss.config.mjs
-├── tailwind.config.js
 ├── tsconfig.json
 └── README.md
 ```

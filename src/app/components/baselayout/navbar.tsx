@@ -21,6 +21,8 @@ export default function Navbar({
 }: NavbarProps) {
   const router = useRouter();
   const [activeSection, setActiveSection] = useState("home");
+  const [currentPath, setCurrentPath] = useState("");
+
   // Map section ids to their corresponding refs
   const sectionRefs: Record<string, React.RefObject<HTMLDivElement> | null> = {
     home: heroRef,
@@ -31,6 +33,26 @@ export default function Navbar({
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Effect to detect current path and set active section
+  useEffect(() => {
+    const path = window.location.pathname;
+    setCurrentPath(path);
+
+    // Set active section based on current path
+    if (path.includes("/aboutus")) {
+      setActiveSection("about");
+    } else if (
+      path === "/" ||
+      path === "/Auramatics" ||
+      path === "/Auramatics/"
+    ) {
+      setActiveSection("home");
+    } else if (path.includes("/contact")) {
+      // Contact page doesn't have a nav item, so clear active section
+      setActiveSection("");
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,26 +67,30 @@ export default function Navbar({
 
   // Function to scroll to a particular ref or navigate to page
   const scrollToSection = (sectionId: string) => {
-    // Check if we're on the contact page
-    const isOnContactPage = window.location.pathname === "/contact";
-    const isOnAboutPage = window.location.pathname === "/aboutus";
+    // Check current page using Next.js router
+    const currentPath = window.location.pathname;
+    const isOnContactPage = currentPath.includes("/contact");
+    const isOnAboutPage = currentPath.includes("/aboutus");
+    const isOnHomePage =
+      currentPath === "/" ||
+      currentPath === "/Auramatics" ||
+      currentPath === "/Auramatics/";
 
-    // Handle About page navigation
+    // Handle page navigation using Next.js router
     if (sectionId === "about") {
       router.push("/aboutus");
+      setActiveSection("about");
       setIsMobileMenuOpen(false);
       return;
     }
 
-    if (isOnContactPage && sectionId !== "contact") {
-      // If on contact page and not clicking contact, navigate to home page
+    // If on a different page and trying to navigate to home sections, go to home page
+    if (
+      (isOnContactPage || isOnAboutPage) &&
+      (sectionId === "home" || sectionId === "our-services")
+    ) {
       router.push("/");
-      return;
-    }
-
-    if (isOnAboutPage && sectionId !== "about") {
-      // If on about page and not clicking about, navigate to home page
-      router.push("/");
+      setActiveSection(sectionId);
       return;
     }
 
@@ -83,11 +109,9 @@ export default function Navbar({
   };
 
   const navItems = [
-    { href: "#home", id: "home", label: "Home" },
-    { href: "#our-services", id: "our-services", label: "Services" },
-    // { href: "/aboutus", id: "about", label: "About" },
+    { href: "/", id: "home", label: "Home" },
+    { href: "/#our-services", id: "our-services", label: "Services" },
     { href: "/aboutus", id: "about", label: "About" },
-    // { href: "#contact", id: "contact", label: "Contact" },
   ];
 
   return (
@@ -106,12 +130,12 @@ export default function Navbar({
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-900">
         {navItems.map((item) => (
-          <button
+          <Link
             key={item.id}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(item.id);
+            href={item.href}
+            onClick={() => {
               setActiveSection(item.id);
+              setIsMobileMenuOpen(false);
             }}
             className={`relative font-bold bg-transparent border-none outline-none cursor-pointer ${
               isScrolled ? "text-black" : "text-white"
@@ -123,7 +147,7 @@ export default function Navbar({
             style={{ background: "none" }}
           >
             {item.label}
-          </button>
+          </Link>
         ))}
       </div>
 
@@ -173,18 +197,18 @@ export default function Navbar({
           className={`absolute top-full left-0 w-full bg-white backdrop-blur-md shadow-md rounded-b-md py-4 px-6 flex flex-col items-start gap-4 md:hidden`}
         >
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.id}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.id);
+              href={item.href}
+              onClick={() => {
                 setActiveSection(item.id);
+                setIsMobileMenuOpen(false);
               }}
               className="w-full text-left font-bold bg-transparent border-none outline-none cursor-pointer text-[#011632]"
               style={{ background: "none" }}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
           <Link
             href="/contact"

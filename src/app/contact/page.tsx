@@ -8,6 +8,8 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import Navbar from "../components/baselayout/navbar";
+import ContactHero from "../components/heroSection/ContactHero";
+import Footer from "../components/baselayout/footer";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -48,35 +50,14 @@ const ContactPage = () => {
         contactRef={contactRef as React.RefObject<HTMLDivElement>}
         heroRef={heroRef as React.RefObject<HTMLDivElement>}
       />
-      <div className="min-h-screen bg-gradient-to-br from-[#0a1225] via-[#1a1a2e] to-[#16213e] relative overflow-hidden">
-        {/* Animated background circles */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-          {/* Header Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-              Get in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                Touch
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-              Ready to transform your business with AI and data solutions?
-              Let&apos;s discuss how we can help you achieve your goals.
-            </p>
-          </motion.div>
+      {/* Hero Section */}
+      <ContactHero ref={heroRef} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-7xl mx-auto">
+      {/* Contact Form and Information Section */}
+      <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -85,10 +66,10 @@ const ContactPage = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-white mb-8">
+                <h2 className="text-3xl font-bold text-[#011632] mb-8">
                   Let&apos;s Connect
                 </h2>
-                <p className="text-gray-300 text-lg mb-8">
+                <p className="text-[#3C4959] text-lg mb-8">
                   We&apos;re here to help you navigate the world of AI and data.
                   Reach out to us and let&apos;s start a conversation about your
                   next project.
@@ -99,51 +80,51 @@ const ContactPage = () => {
               <div className="space-y-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                  className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
                       <FaEnvelope className="text-white text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-[#011632] font-semibold text-lg">
                         Email Us
                       </h3>
-                      <p className="text-gray-300">contact@auramatics.com</p>
+                      <p className="text-[#3C4959]">contact@auramatics.com</p>
                     </div>
                   </div>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                  className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                       <FaPhone className="text-white text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-[#011632] font-semibold text-lg">
                         Call Us
                       </h3>
-                      <p className="text-gray-300">+1 (555) 123-4567</p>
+                      <p className="text-[#3C4959]">+1 (555) 123-4567</p>
                     </div>
                   </div>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                  className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-lg flex items-center justify-center">
                       <FaMapMarkerAlt className="text-white text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-[#011632] font-semibold text-lg">
                         Visit Us
                       </h3>
-                      <p className="text-gray-300">
+                      <p className="text-[#3C4959]">
                         123 Innovation Drive
                         <br />
                         Tech City, TC 12345
@@ -160,10 +141,10 @@ const ContactPage = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="mt-8"
               >
-                <h3 className="text-white font-semibold text-lg mb-4">
+                <h3 className="text-[#011632] font-semibold text-lg mb-4">
                   Our Location
                 </h3>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden">
+                <div className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2156!2d-74.0059!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
                     width="100%"
@@ -183,9 +164,10 @@ const ContactPage = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8"
+              id="contact-form"
+              className="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6 lg:p-8"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#011632] mb-6 sm:mb-8">
                 Send us a Message
               </h2>
 
@@ -194,7 +176,7 @@ const ContactPage = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-white font-medium mb-2"
+                      className="block text-[#011632] font-medium mb-2"
                     >
                       Full Name *
                     </label>
@@ -205,7 +187,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-[#011632] placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </div>
@@ -213,7 +195,7 @@ const ContactPage = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-white font-medium mb-2"
+                      className="block text-[#011632] font-medium mb-2"
                     >
                       Email Address *
                     </label>
@@ -224,7 +206,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-[#011632] placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -233,7 +215,7 @@ const ContactPage = () => {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-white font-medium mb-2"
+                    className="block text-[#011632] font-medium mb-2"
                   >
                     Company
                   </label>
@@ -243,7 +225,7 @@ const ContactPage = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-[#011632] placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
                     placeholder="Your company name"
                   />
                 </div>
@@ -251,7 +233,7 @@ const ContactPage = () => {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-white font-medium mb-2"
+                    className="block text-[#011632] font-medium mb-2"
                   >
                     Subject *
                   </label>
@@ -262,7 +244,7 @@ const ContactPage = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-[#011632] placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -270,7 +252,7 @@ const ContactPage = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-white font-medium mb-2"
+                    className="block text-[#011632] font-medium mb-2"
                   >
                     Message *
                   </label>
@@ -281,7 +263,7 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-[#011632] placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none"
                     placeholder="Tell us about your project or how we can help..."
                   />
                 </div>
@@ -299,8 +281,9 @@ const ContactPage = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-      {/* <Footer /> */}
+      </section>
+
+      <Footer />
     </div>
   );
 };

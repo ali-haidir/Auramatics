@@ -61,7 +61,7 @@ const socialIcons = [
 
 const Footer = () => {
   return (
-    <footer className="relative pt-8 sm:pt-12 px-4 sm:px-6 md:px-20 w-full bg-[#0a1225] text-quaternary-gray text-center overflow-hidden">
+    <footer className="relative pt-8 sm:pt-12 px-4 sm:px-6 md:px-20 w-full bg-[#0a1225] text-gray-300 text-center overflow-hidden">
       {/* Animated background circles */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -90,9 +90,9 @@ const Footer = () => {
               <Link
                 key={idx}
                 href={href}
-                className="rounded-md bg-[#3D3D3D] hover:bg-sk-orange transition-colors duration-300 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
+                className="rounded-md bg-[#3D3D3D] text-white transition-colors duration-300 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
               >
-                <Icon className="text-sm sm:text-lg text-quaternary-gray hover:text-primary-gray" />
+                <Icon className="text-sm sm:text-lg text-gray-300 hover:text-white" />
               </Link>
             ))}
           </div>
@@ -100,7 +100,7 @@ const Footer = () => {
 
         {/* Services Section */}
         <div className="space-y-4 sm:space-y-6 flex flex-col items-center mt-4">
-          <h4 className="text-sk-orange font-semibold text-base sm:text-lg">
+          <h4 className="text-white font-semibold text-base sm:text-lg">
             {footerLinks[0].title}
           </h4>
           <ul
@@ -108,7 +108,7 @@ const Footer = () => {
           >
             {footerLinks[0].items.map((item, i) => (
               <li key={i} className="mb-1 sm:mb-2">
-                <Link href={item.url} className="hover:text-sk-orange">
+                <Link href={item.url} className="text-white">
                   {item.name}
                 </Link>
               </li>
@@ -118,7 +118,7 @@ const Footer = () => {
 
         {/* Contact Section */}
         <div className="space-y-4 sm:space-y-6 flex flex-col items-center mt-8 sm:mt-12">
-          <h4 className="text-sk-orange font-semibold text-base sm:text-lg">
+          <h4 className="text-white font-semibold text-base sm:text-lg">
             {footerLinks[1].title}
           </h4>
           <ul
@@ -126,7 +126,7 @@ const Footer = () => {
           >
             {footerLinks[1].items.map((item, i) => (
               <li key={i} className="mb-1 sm:mb-2">
-                <Link href={item.url} className="hover:text-sk-orange">
+                <Link href={item.url} className="text-white">
                   {item.name}
                 </Link>
               </li>
@@ -135,7 +135,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center py-6 sm:py-8 text-xs sm:text-sm font-bold text-quaternary-gray max-w-7xl mx-auto px-4">
+      <div className="text-center py-6 sm:py-8 text-xs sm:text-sm font-bold text-gray-300 max-w-7xl mx-auto px-4">
         © 2025 AURAMATICS. All rights reserved.
       </div>
     </footer>

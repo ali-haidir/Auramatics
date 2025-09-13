@@ -22,7 +22,7 @@ const ServiceFeatureCard = ({
 }: ServiceFeatureCardProps) => {
   return (
     <div
-      className={`rounded-xl flex flex-col items-center justify-center gap-3 sm:gap-4 h-64 sm:h-72 py-4 sm:py-6 px-3 sm:px-4 text-center ${
+      className={`rounded-xl flex flex-col items-center justify-center gap-3 sm:gap-4 h-64 sm:h-72 py-4 sm:py-6 px-3 sm:px-4 text-center hover:scale-105 ${
         isHighlighted
           ? "border-[#2596be] border-2 bg-[#FFFDF5]"
           : "border-[#E7E7E7] border bg-white"

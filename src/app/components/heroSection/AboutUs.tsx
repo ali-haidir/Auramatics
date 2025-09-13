@@ -9,7 +9,7 @@ const listItemsCards = [
   {
     title: "Product Development",
     content:
-      "From concept to launch, we turn ideas into scalable products.We design and develop solutions that align with your business goals, using modern frameworks, cloud-native technologies, and best practices for reliability and performance.",
+      "We design and develop solutions that align with your business goals, using modern frameworks, cloud-native technologies, and best practices for reliability and performance.",
     icon: (
       <Image
         src={ProductDevelopment}
@@ -22,7 +22,7 @@ const listItemsCards = [
   {
     title: "Custom Solutions",
     content:
-      "Every business challenge deserves a tailored solution.Our team creates bespoke strategies in data engineering, AI, and automation that are built specifically for your needs — ensuring efficiency, scalability, and measurable impact.",
+      "Our team creates bespoke strategies in data engineering, AI, and automation that are built specifically for your needs ensuring efficiency, scalability, and measurable impact.",
     icon: (
       <Image
         src={CustomSolutions}
@@ -35,7 +35,7 @@ const listItemsCards = [
   {
     title: "Dedicated Teams",
     content:
-      "Your extended tech team, ready to deliver.We provide skilled engineers, data experts, and AI specialists who integrate seamlessly with your organization, helping you accelerate innovation and focus on growth.",
+      "We provide skilled engineers, data experts, and AI specialists who integrate seamlessly with your organization, helping you accelerate innovation and focus on growth.",
     icon: (
       <Image
         src={DedicatedTeams}

@@ -34,22 +34,22 @@ const CONTACT_METHODS: ContactMethod[] = [
   {
     icon: FaEnvelope,
     title: "Email Us",
-    value: "contact@auramatics.com",
+    value: "info@auramtics.tech",
     description: "Send us a message anytime",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: FaPhone,
     title: "Call Us",
-    value: "+1 (555) 123-4567",
+    value: "+1 (587) 716-0961",
     description: "Mon-Fri 9AM-6PM EST",
     color: "from-purple-500 to-pink-500",
   },
   {
     icon: FaMapMarkerAlt,
     title: "Visit Us",
-    value: "123 Innovation Drive",
-    description: "Tech City, TC 12345",
+    value: "349 Midgrove Link SouthWest",
+    description: "Airdrie, AB, Canada",
     color: "from-pink-500 to-blue-500",
   },
   {

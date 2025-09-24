@@ -301,7 +301,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section
       <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-12">
@@ -343,7 +343,7 @@ export default function AboutUs() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 bg-gradient-to-r from-[#011632] to-[#0a1225]">

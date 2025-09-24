@@ -44,10 +44,10 @@ const footerLinks = [
     items: [
       {
         name: "Get in Touch",
-        url: "/",
+        url: "/contact",
       },
-      { name: "contact@auramatics.com", url: "/" },
-      { name: "Schedule a Consultation", url: "/" },
+      { name: "info@auramtics.tech", url: "/contact" },
+      { name: "Schedule a Consultation", url: "/contact" },
     ],
   },
 ];

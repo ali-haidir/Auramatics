@@ -6,19 +6,30 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaPaperPlane,
+  FaSpinner,
+  FaCheck,
+  FaExclamationTriangle,
 } from "react-icons/fa";
 import Navbar from "../components/baselayout/navbar";
 import ContactHero from "../components/heroSection/ContactHero";
 import Footer from "../components/baselayout/footer";
+import { type ContactFormData } from "../services/clientEmailService";
+import { sendContactFormEmailClient } from "../services/clientEmailService";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     company: "",
     subject: "",
     message: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   // Create refs for navbar navigation
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -36,10 +47,37 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Submit button does nothing as requested
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      // Use client-side email service for static export compatibility
+      const result = await sendContactFormEmailClient(formData);
+
+      if (result.success) {
+        setSubmitStatus({ type: "success", message: result.message });
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({ type: "error", message: result.message });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,7 +128,7 @@ const ContactPage = () => {
                       <h3 className="text-[#011632] font-semibold text-lg">
                         Email Us
                       </h3>
-                      <p className="text-[#3C4959]">contact@auramatics.com</p>
+                      <p className="text-[#3C4959]">info@auramtics.tech</p>
                     </div>
                   </div>
                 </motion.div>
@@ -107,7 +145,7 @@ const ContactPage = () => {
                       <h3 className="text-[#011632] font-semibold text-lg">
                         Call Us
                       </h3>
-                      <p className="text-[#3C4959]">+1 (555) 123-4567</p>
+                      <p className="text-[#3C4959]">+1 (587) 716-0961</p>
                     </div>
                   </div>
                 </motion.div>
@@ -125,9 +163,9 @@ const ContactPage = () => {
                         Visit Us
                       </h3>
                       <p className="text-[#3C4959]">
-                        123 Innovation Drive
+                        349 Midgrove Link SouthWest
                         <br />
-                        Tech City, TC 12345
+                        Airdrie, AB, Canada
                       </p>
                     </div>
                   </div>
@@ -145,16 +183,34 @@ const ContactPage = () => {
                   Our Location
                 </h3>
                 <div className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2156!2d-74.0059!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
-                    width="100%"
-                    height="200"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-48"
-                  ></iframe>
+                  <div
+                    className="relative cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://www.google.com/maps/place/349+Midgrove+Link+SouthWest,+Airdrie,+AB,+Canada",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.123456789!2d-114.0123456789!3d51.2345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170123456789%3A0x123456789abcdef!2s349%20Midgrove%20Link%20SW%2C%20Airdrie%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sca!4v1704067200000!5m2!1sen!2sca"
+                      width="100%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-48"
+                      title="AURAMATICS Location - 349 Midgrove Link SouthWest, Airdrie, AB, Canada"
+                    ></iframe>
+                    <div className="absolute inset-0 bg-transparent hover:bg-black/5 transition-colors duration-200 flex items-center justify-center">
+                      <div className="bg-white/90 px-4 py-2 rounded-lg shadow-lg opacity-0 hover:opacity-100 transition-opacity duration-200">
+                        <span className="text-sm font-medium text-gray-800">
+                          Click to open in Google Maps
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -268,14 +324,50 @@ const ContactPage = () => {
                   />
                 </div>
 
+                {/* Status Message */}
+                {submitStatus.type && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-lg flex items-center space-x-3 ${
+                      submitStatus.type === "success"
+                        ? "bg-green-50 border border-green-200 text-green-800"
+                        : "bg-red-50 border border-red-200 text-red-800"
+                    }`}
+                  >
+                    {submitStatus.type === "success" ? (
+                      <FaCheck className="text-green-600 flex-shrink-0" />
+                    ) : (
+                      <FaExclamationTriangle className="text-red-600 flex-shrink-0" />
+                    )}
+                    <span className="text-sm font-medium">
+                      {submitStatus.message}
+                    </span>
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-4 px-8 rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
+                  disabled={isSubmitting}
+                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+                  className={`w-full font-semibold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg ${
+                    isSubmitting
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 hover:shadow-xl"
+                  } text-white`}
                 >
-                  <FaPaperPlane className="text-lg" />
-                  <span>Send Message</span>
+                  {isSubmitting ? (
+                    <>
+                      <FaSpinner className="text-lg animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane className="text-lg" />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </motion.button>
               </form>
             </motion.div>

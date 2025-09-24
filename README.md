@@ -462,7 +462,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Email**: contact@auramatics.com
+- **Email**: info@auramtics.tech
 - **Website**: [AURAMATICS](https://auramatics.com)
 - **LinkedIn**: [AURAMATICS](https://linkedin.com/company/auramatics)
 

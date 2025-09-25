@@ -1,98 +1,62 @@
-# Email Setup with Resend
+# Email Setup Guide
 
-This project uses Resend for sending contact form emails. Follow these steps to set up email functionality:
+This guide explains how the email functionality works for the AURAMATICS contact form.
 
-## 1. Get Resend API Key
+## Email Functionality
 
-1. Go to [Resend.com](https://resend.com)
-2. Sign up for a free account
-3. Navigate to API Keys section
-4. Create a new API key
-5. Copy the API key (starts with `re_`)
+The contact form uses a **mailto** approach for maximum compatibility with static hosting:
 
-## 2. Configure Environment Variables
+1. **User fills out the contact form**
+2. **Form data is formatted into an email body**
+3. **User's default email client opens with pre-filled message**
+4. **User sends the email to `jonpeter301@gmail.com`**
 
-Create a `.env.local` file in your project root with:
+## Benefits of This Approach
 
-```bash
-# Resend API Configuration (for server-side API routes)
-RESEND_API_KEY=re_your_api_key_here
+- ✅ **No server required** - Works with static hosting
+- ✅ **No API keys needed** - No external dependencies
+- ✅ **Universal compatibility** - Works on all devices and browsers
+- ✅ **Privacy friendly** - No data sent to external services
+- ✅ **Reliable** - Uses native email functionality
 
-# Resend API Configuration (for client-side static export)
-NEXT_PUBLIC_RESEND_API_KEY=re_your_api_key_here
-```
+## How It Works
 
-**Note**: This project uses static export (`output: export`), so we need both environment variables:
+When a user submits the contact form:
 
-- `RESEND_API_KEY`: For server-side API routes (development)
-- `NEXT_PUBLIC_RESEND_API_KEY`: For client-side email sending (production/static export)
+1. The form data is collected and validated
+2. A mailto link is generated with:
+   - **To**: `jonpeter301@gmail.com`
+   - **Subject**: "New Contact Form Submission - AURAMATICS"
+   - **Body**: Formatted with all form fields
+3. The user's default email client opens
+4. The user can review and send the email
 
-## 3. Verify Your Domain (Optional)
-
-For production use, you should verify your domain in Resend:
-
-1. Go to Resend Dashboard → Domains
-2. Add your domain (e.g., `auramatics.tech`)
-3. Follow the DNS verification steps
-4. Update the `from` field in `emailService.ts` to use your verified domain
-
-## 4. Test the Integration
+## Testing
 
 1. Start your development server: `npm run dev`
 2. Go to the contact page
 3. Fill out and submit the contact form
-4. Check your email (`jonpeter301@gmail.com`) for the new message
+4. Your email client should open with a pre-filled message
+5. Send the email to complete the process
 
-## 5. Static Export Compatibility
+## Production Deployment
 
-This project is configured with `output: export` for static site generation. The email service works in both environments:
+This approach works perfectly with:
 
-### Development Mode:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting provider
 
-- Uses server-side API routes (`/api/send-email`)
-- Requires `RESEND_API_KEY` environment variable
+No additional configuration is needed for production deployment.
 
-### Production/Static Export:
+## Alternative: Server-Side Email (Optional)
 
-- Uses client-side email sending directly to Resend API
-- Requires `NEXT_PUBLIC_RESEND_API_KEY` environment variable
-- Works with static hosting (GitHub Pages, Netlify, Vercel, etc.)
+If you prefer server-side email sending, you can:
 
-## 6. Fallback Mode
+1. Set up a server (Node.js, Python, etc.)
+2. Create an API endpoint to handle form submissions
+3. Use services like Resend, SendGrid, or Nodemailer
+4. Update the contact form to POST to your API endpoint
 
-If no API key is configured, the system will:
-
-- Log email content to the console
-- Show a "Simulation mode" message to users
-- Still validate and process the form
-
-## Email Features
-
-- **Recipient**: jonpeter301@gmail.com
-- **HTML Email**: Beautifully formatted with your brand colors
-- **Reply-To**: Set to the form submitter's email
-- **Validation**: Full form validation before sending
-- **Error Handling**: Graceful error messages
-
-## Troubleshooting
-
-### Common Issues:
-
-1. **"API key not found"**: Make sure `.env.local` exists and contains `RESEND_API_KEY`
-2. **"Invalid API key"**: Verify your API key is correct and active
-3. **"Domain not verified"**: Use a verified domain or the default Resend domain
-4. **Emails not received**: Check spam folder and verify recipient email
-
-### Development vs Production:
-
-- **Development**: Uses simulation mode if no API key
-- **Production**: Requires valid Resend API key and verified domain
-
-## Cost
-
-Resend offers:
-
-- **Free tier**: 3,000 emails/month
-- **Paid plans**: Starting at $20/month for 50,000 emails
-
-Perfect for contact forms and transactional emails!
+However, the current mailto approach is recommended for simplicity and reliability.

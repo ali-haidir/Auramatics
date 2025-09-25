@@ -14,16 +14,10 @@ import Footer from "./components/baselayout/footer";
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   return (
     <div className="bg-[#FFFFFF]">
-      <Navbar
-        aboutRef={aboutRef as React.RefObject<HTMLDivElement>}
-        servicesRef={servicesRef as React.RefObject<HTMLDivElement>}
-        contactRef={contactRef as React.RefObject<HTMLDivElement>}
-        heroRef={heroRef as React.RefObject<HTMLDivElement>}
-      />
+      <Navbar />
       <Hero_new ref={heroRef} />
       <AboutUS
         ref={aboutRef}

@@ -2,7 +2,6 @@
 // import { style } from "framer-motion/client";
 import React from "react";
 // import { IoArrowForward } from "react-icons/io5";
-import { motion } from "framer-motion";
 interface ServiceFeatureCardProps {
   title: string;
   subtitle?: string;

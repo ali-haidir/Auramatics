@@ -7,29 +7,29 @@ import Footer from "../components/baselayout/footer";
 import { useRef } from "react";
 
 // Team member data
-const teamMembers = [
-  {
-    name: "Alex Johnson",
-    role: "CEO & Founder",
-    description:
-      "Visionary leader with 15+ years in data engineering and AI solutions.",
-    image: "/images/team/ceo.jpg", // Placeholder - you can add actual images
-  },
-  {
-    name: "Sarah Chen",
-    role: "CTO",
-    description:
-      "Technical architect specializing in scalable data infrastructure and AI systems.",
-    image: "/images/team/cto.jpg",
-  },
-  {
-    name: "Michael Rodriguez",
-    role: "Lead Data Scientist",
-    description:
-      "Expert in machine learning and advanced analytics with a passion for innovation.",
-    image: "/images/team/data-scientist.jpg",
-  },
-];
+// const teamMembers = [
+//   {
+//     name: "Alex Johnson",
+//     role: "CEO & Founder",
+//     description:
+//       "Visionary leader with 15+ years in data engineering and AI solutions.",
+//     image: "/images/team/ceo.jpg", // Placeholder - you can add actual images
+//   },
+//   {
+//     name: "Sarah Chen",
+//     role: "CTO",
+//     description:
+//       "Technical architect specializing in scalable data infrastructure and AI systems.",
+//     image: "/images/team/cto.jpg",
+//   },
+//   {
+//     name: "Michael Rodriguez",
+//     role: "Lead Data Scientist",
+//     description:
+//       "Expert in machine learning and advanced analytics with a passion for innovation.",
+//     image: "/images/team/data-scientist.jpg",
+//   },
+// ];
 
 // Company stats
 const companyStats = [
@@ -70,17 +70,10 @@ const companyValues = [
 export default function AboutUs() {
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
-      <Navbar
-        aboutRef={aboutRef as React.RefObject<HTMLDivElement>}
-        servicesRef={servicesRef as React.RefObject<HTMLDivElement>}
-        contactRef={contactRef as React.RefObject<HTMLDivElement>}
-        heroRef={heroRef as React.RefObject<HTMLDivElement>}
-      />
+      <Navbar />
 
       {/* Hero Section */}
       <section

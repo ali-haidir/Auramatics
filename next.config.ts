@@ -4,7 +4,8 @@ const isProd = process.env.NODE_ENV === "production";
 const isGithubPages = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Only use static export for production builds, not development
+  ...(isProd && { output: "export" }),
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: "out",
@@ -22,6 +23,8 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: isProd,
   },
+  // Note: Security headers are not supported with static export
+  // Configure them at the hosting provider level
   // Bundle optimization
   webpack: (config, { isServer }) => {
     if (!isServer) {

@@ -89,15 +89,6 @@ const ContactHero = forwardRef<HTMLDivElement, ContactHeroProps>(
     // Use default props with proper destructuring
     const { title, subtitle, description } = { ...DEFAULT_PROPS, ...props };
 
-    // Debug logging in development
-    if (process.env.NODE_ENV === "development") {
-      console.log("ContactHero rendered with props:", {
-        title,
-        subtitle,
-        description,
-      });
-    }
-
     return (
       <section
         ref={ref}
@@ -185,14 +176,6 @@ interface ContactMethodsSectionProps {
 const ContactMethodsSection: React.FC<ContactMethodsSectionProps> = ({
   contactMethods,
 }) => {
-  // Debug logging in development
-  if (process.env.NODE_ENV === "development") {
-    console.log(
-      "ContactMethodsSection rendered with methods:",
-      contactMethods.length
-    );
-  }
-
   // Display only first 3 methods for hero section
   const displayMethods = contactMethods.slice(0, 3);
 

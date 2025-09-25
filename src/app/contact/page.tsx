@@ -13,8 +13,14 @@ import {
 import Navbar from "../components/baselayout/navbar";
 import ContactHero from "../components/heroSection/ContactHero";
 import Footer from "../components/baselayout/footer";
-import { type ContactFormData } from "../services/clientEmailService";
-import { sendContactFormEmailClient } from "../services/clientEmailService";
+// Contact form data type
+interface ContactFormData {
+  name: string;
+  email: string;
+  company: string;
+  subject: string;
+  message: string;
+}
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -32,9 +38,6 @@ const ContactPage = () => {
   }>({ type: null, message: "" });
 
   // Create refs for navbar navigation
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   const handleInputChange = (
@@ -53,27 +56,43 @@ const ContactPage = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      // Use client-side email service for static export compatibility
-      const result = await sendContactFormEmailClient(formData);
+      // For static export, we'll use a simple mailto link approach
+      const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+Subject: ${formData.subject}
 
-      if (result.success) {
-        setSubmitStatus({ type: "success", message: result.message });
-        // Reset form after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          company: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        setSubmitStatus({ type: "error", message: result.message });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+Message:
+${formData.message}
+      `.trim();
+
+      const mailtoLink = `mailto:jonpeter301@gmail.com?subject=New Contact Form Submission - AURAMATICS&body=${encodeURIComponent(
+        emailBody
+      )}`;
+
+      // Open email client
+      window.open(mailtoLink, "_blank");
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Thank you for your message! Your email client should open with a pre-filled message. Please send it to complete your submission.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        subject: "",
+        message: "",
+      });
+    } catch {
       setSubmitStatus({
         type: "error",
-        message: "Network error. Please check your connection and try again.",
+        message:
+          "Sorry, there was an error. Please try again or contact us directly at jonpeter301@gmail.com",
       });
     } finally {
       setIsSubmitting(false);
@@ -82,12 +101,7 @@ const ContactPage = () => {
 
   return (
     <div className="bg-[#FFFFFF]">
-      <Navbar
-        aboutRef={aboutRef as React.RefObject<HTMLDivElement>}
-        servicesRef={servicesRef as React.RefObject<HTMLDivElement>}
-        contactRef={contactRef as React.RefObject<HTMLDivElement>}
-        heroRef={heroRef as React.RefObject<HTMLDivElement>}
-      />
+      <Navbar />
 
       {/* Hero Section */}
       <ContactHero ref={heroRef} />

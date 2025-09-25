@@ -2,34 +2,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 import Logo from "@/assets/Homepage/logo_new.png";
 
-type NavbarProps = {
-  heroRef: React.RefObject<HTMLDivElement> | null;
-  servicesRef: React.RefObject<HTMLDivElement> | null;
-  aboutRef: React.RefObject<HTMLDivElement> | null;
-  contactRef: React.RefObject<HTMLDivElement> | null;
-};
+type NavbarProps = Record<string, never>;
 
-export default function Navbar({
-  heroRef,
-  servicesRef,
-  aboutRef,
-  contactRef,
-}: NavbarProps) {
-  const router = useRouter();
+export default function Navbar({}: // heroRef,
+// servicesRef,
+// aboutRef,
+// contactRef,
+NavbarProps) {
+  // const router = useRouter();
   const [activeSection, setActiveSection] = useState("home");
-  const [currentPath, setCurrentPath] = useState("");
+  // const [currentPath, setCurrentPath] = useState("");
 
   // Map section ids to their corresponding refs
-  const sectionRefs: Record<string, React.RefObject<HTMLDivElement> | null> = {
-    home: heroRef,
-    "our-services": servicesRef,
-    about: aboutRef,
-    contact: contactRef,
-  };
+  // const sectionRefs: Record<string, React.RefObject<HTMLDivElement> | null> = {
+  //   home: heroRef,
+  //   "our-services": servicesRef,
+  //   about: aboutRef,
+  //   contact: contactRef,
+  // };
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,7 +31,6 @@ export default function Navbar({
   // Effect to detect current path and set active section
   useEffect(() => {
     const path = window.location.pathname;
-    setCurrentPath(path);
 
     // Set active section based on current path
     if (path.includes("/aboutus")) {
@@ -66,47 +59,47 @@ export default function Navbar({
   }, []);
 
   // Function to scroll to a particular ref or navigate to page
-  const scrollToSection = (sectionId: string) => {
-    // Check current page using Next.js router
-    const currentPath = window.location.pathname;
-    const isOnContactPage = currentPath.includes("/contact");
-    const isOnAboutPage = currentPath.includes("/aboutus");
-    const isOnHomePage =
-      currentPath === "/" ||
-      currentPath === "/Auramatics" ||
-      currentPath === "/Auramatics/";
+  // const scrollToSection = (sectionId: string) => {
+  //   // Check current page using Next.js router
+  //   const currentPath = window.location.pathname;
+  //   const isOnContactPage = currentPath.includes("/contact");
+  //   const isOnAboutPage = currentPath.includes("/aboutus");
+  //   const isOnHomePage =
+  //     currentPath === "/" ||
+  //     currentPath === "/Auramatics" ||
+  //     currentPath === "/Auramatics/";
 
-    // Handle page navigation using Next.js router
-    if (sectionId === "about") {
-      router.push("/aboutus");
-      setActiveSection("about");
-      setIsMobileMenuOpen(false);
-      return;
-    }
+  //   // Handle page navigation using Next.js router
+  //   if (sectionId === "about") {
+  //     router.push("/aboutus");
+  //     setActiveSection("about");
+  //     setIsMobileMenuOpen(false);
+  //     return;
+  //   }
 
-    // If on a different page and trying to navigate to home sections, go to home page
-    if (
-      (isOnContactPage || isOnAboutPage) &&
-      (sectionId === "home" || sectionId === "our-services")
-    ) {
-      router.push("/");
-      setActiveSection(sectionId);
-      return;
-    }
+  //   // If on a different page and trying to navigate to home sections, go to home page
+  //   if (
+  //     (isOnContactPage || isOnAboutPage) &&
+  //     (sectionId === "home" || sectionId === "our-services")
+  //   ) {
+  //     router.push("/");
+  //     setActiveSection(sectionId);
+  //     return;
+  //   }
 
-    const ref = sectionRefs[sectionId];
-    if (ref && ref.current) {
-      const offset = 60;
-      const elementPosition =
-        ref.current.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setIsMobileMenuOpen(false);
-    }
-  };
+  //   const ref = sectionRefs[sectionId];
+  //   if (ref && ref.current) {
+  //     const offset = 60;
+  //     const elementPosition =
+  //       ref.current.getBoundingClientRect().top + window.pageYOffset;
+  //     const offsetPosition = elementPosition - offset;
+  //     window.scrollTo({
+  //       top: offsetPosition,
+  //       behavior: "smooth",
+  //     });
+  //     setIsMobileMenuOpen(false);
+  //   }
+  // };
 
   const navItems = [
     { href: "/", id: "home", label: "Home" },

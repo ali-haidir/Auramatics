@@ -8,7 +8,6 @@ import {
   FaPython,
   FaJs,
   FaAws,
-  FaGoogle,
   FaMicrosoft,
 } from "react-icons/fa";
 import {
@@ -35,6 +34,8 @@ import {
   SiOpenai,
   SiMlflow,
 } from "react-icons/si";
+import Image from "next/image";
+import { VscAzure } from "react-icons/vsc";
 
 // Technology categories organized into three cards
 const technologyCategories = [
@@ -43,7 +44,7 @@ const technologyCategories = [
     technologies: [
       {
         name: "Azure",
-        icon: <FaMicrosoft className="w-8 h-8" />,
+        icon: <VscAzure className="w-8 h-8" />,
         color: "text-blue-600",
       },
       {
@@ -53,8 +54,16 @@ const technologyCategories = [
       },
       {
         name: "GCP",
-        icon: <FaGoogle className="w-8 h-8" />,
-        color: "text-blue-500",
+        icon: (
+          <Image
+            src="/google_cloud-icon.svg"
+            alt="Google Cloud"
+            width={32}
+            height={32}
+            priority
+          />
+        ),
+        color: "",
       },
       {
         name: "Snowflake",
@@ -95,6 +104,69 @@ const technologyCategories = [
         name: "Airflow",
         icon: <SiApacheairflow className="w-8 h-8" />,
         color: "text-cyan-500",
+      },
+    ],
+  },
+  {
+    title: "AI, ML & Automation",
+    technologies: [
+      {
+        name: "Python",
+        icon: <FaPython className="w-8 h-8" />,
+        color: "text-yellow-500",
+      },
+      {
+        name: "TensorFlow",
+        icon: <SiTensorflow className="w-8 h-8" />,
+        color: "text-orange-500",
+      },
+      {
+        name: "PyTorch",
+        icon: <SiPytorch className="w-8 h-8" />,
+        color: "text-red-500",
+      },
+      {
+        name: "Scikit-learn",
+        icon: <SiScikitlearn className="w-8 h-8" />,
+        color: "text-orange-600",
+      },
+      {
+        name: "Hugging Face",
+        icon: <SiHuggingface className="w-8 h-8" />,
+        color: "text-yellow-500",
+      },
+      {
+        name: "LangChain",
+        icon: <SiLangchain className="w-8 h-8" />,
+        color: "text-blue-500",
+      },
+      {
+        name: "UIPath",
+        icon: <SiUipath className="w-8 h-8" />,
+        color: "text-blue-600",
+      },
+      {
+        name: "XML",
+        icon: (
+          <Image
+            src="/w3c_xml-icon.svg"
+            alt="Google Cloud"
+            width={32}
+            height={32}
+            priority
+          />
+        ),
+        color: "",
+      },
+      {
+        name: "OpenAI",
+        icon: <SiOpenai className="w-8 h-8" />,
+        color: "text-green-500",
+      },
+      {
+        name: "MLflow",
+        icon: <SiMlflow className="w-8 h-8" />,
+        color: "text-blue-500",
       },
     ],
   },
@@ -150,61 +222,6 @@ const technologyCategories = [
         name: "FastAPI",
         icon: <SiFastapi className="w-8 h-8" />,
         color: "text-green-500",
-      },
-    ],
-  },
-  {
-    title: "AI, ML & Automation",
-    technologies: [
-      {
-        name: "Python",
-        icon: <FaPython className="w-8 h-8" />,
-        color: "text-yellow-500",
-      },
-      {
-        name: "TensorFlow",
-        icon: <SiTensorflow className="w-8 h-8" />,
-        color: "text-orange-500",
-      },
-      {
-        name: "PyTorch",
-        icon: <SiPytorch className="w-8 h-8" />,
-        color: "text-red-500",
-      },
-      {
-        name: "Scikit-learn",
-        icon: <SiScikitlearn className="w-8 h-8" />,
-        color: "text-orange-600",
-      },
-      {
-        name: "Hugging Face",
-        icon: <SiHuggingface className="w-8 h-8" />,
-        color: "text-yellow-500",
-      },
-      {
-        name: "LangChain",
-        icon: <SiLangchain className="w-8 h-8" />,
-        color: "text-blue-500",
-      },
-      {
-        name: "UIPath",
-        icon: <SiUipath className="w-8 h-8" />,
-        color: "text-blue-600",
-      },
-      {
-        name: "XLM",
-        icon: <FaJs className="w-8 h-8" />,
-        color: "text-purple-500",
-      },
-      {
-        name: "OpenAI",
-        icon: <SiOpenai className="w-8 h-8" />,
-        color: "text-green-500",
-      },
-      {
-        name: "MLflow",
-        icon: <SiMlflow className="w-8 h-8" />,
-        color: "text-blue-500",
       },
     ],
   },

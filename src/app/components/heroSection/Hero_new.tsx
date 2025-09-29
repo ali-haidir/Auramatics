@@ -77,7 +77,7 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
 
         {/* Company Name */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center -mt-12 sm:-mt-16 lg:-mt-20">
-          AUROMATICS
+          Auramatics
         </h2>
       </div>
     </section>

@@ -188,7 +188,7 @@ const ContactPage = () => {
               </h2>
 
               <form
-                action="https://formsubmit.co/khalihaider9@gmail.com"
+                action="https://formsubmit.co/khalihaider8@gmail.com"
                 method="POST"
                 className="space-y-4 sm:space-y-6"
               >
@@ -203,7 +203,7 @@ const ContactPage = () => {
                 <input
                   type="hidden"
                   name="_next"
-                  value="https://auramatics.tech/contact?sent=1"
+                  value="https://auramatics.tech/contact/"
                 />
                 {/* Honeypot field to reduce spam (bots will fill this) */}
                 <input

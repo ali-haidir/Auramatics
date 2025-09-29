@@ -6,9 +6,6 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaPaperPlane,
-  FaSpinner,
-  FaCheck,
-  FaExclamationTriangle,
 } from "react-icons/fa";
 import Navbar from "../components/baselayout/navbar";
 import ContactHero from "../components/heroSection/ContactHero";
@@ -31,11 +28,7 @@ const ContactPage = () => {
     message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
+  // Using FormSubmit service for sending emails; no local submit state needed
 
   // Create refs for navbar navigation
   const heroRef = useRef<HTMLDivElement>(null);
@@ -50,54 +43,7 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
-
-    try {
-      // For static export, we'll use a simple mailto link approach
-      const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Subject: ${formData.subject}
-
-Message:
-${formData.message}
-      `.trim();
-
-      const mailtoLink = `mailto:jonpeter301@gmail.com?subject=New Contact Form Submission - AURAMATICS&body=${encodeURIComponent(
-        emailBody
-      )}`;
-
-      // Open email client
-      window.open(mailtoLink, "_blank");
-
-      setSubmitStatus({
-        type: "success",
-        message:
-          "Thank you for your message! Your email client should open with a pre-filled message. Please send it to complete your submission.",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        subject: "",
-        message: "",
-      });
-    } catch {
-      setSubmitStatus({
-        type: "error",
-        message:
-          "Sorry, there was an error. Please try again or contact us directly at jonpeter301@gmail.com",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // No custom submit handler; the form posts directly to FormSubmit
 
   return (
     <div className="bg-[#FFFFFF]">
@@ -241,7 +187,20 @@ ${formData.message}
                 Send us a Message
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form
+                action="https://formsubmit.co/khalihaider9@gmail.com"
+                method="POST"
+                className="space-y-4 sm:space-y-6"
+              >
+                {/* FormSubmit configuration */}
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Contact Form Submission - AURAMATICS"
+                />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="/contact" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label
@@ -338,50 +297,14 @@ ${formData.message}
                   />
                 </div>
 
-                {/* Status Message */}
-                {submitStatus.type && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-lg flex items-center space-x-3 ${
-                      submitStatus.type === "success"
-                        ? "bg-green-50 border border-green-200 text-green-800"
-                        : "bg-red-50 border border-red-200 text-red-800"
-                    }`}
-                  >
-                    {submitStatus.type === "success" ? (
-                      <FaCheck className="text-green-600 flex-shrink-0" />
-                    ) : (
-                      <FaExclamationTriangle className="text-red-600 flex-shrink-0" />
-                    )}
-                    <span className="text-sm font-medium">
-                      {submitStatus.message}
-                    </span>
-                  </motion.div>
-                )}
-
                 <motion.button
                   type="submit"
-                  disabled={isSubmitting}
-                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
-                  whileTap={!isSubmitting ? { scale: 0.95 } : {}}
-                  className={`w-full font-semibold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg ${
-                    isSubmitting
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 hover:shadow-xl"
-                  } text-white`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full font-semibold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 hover:shadow-xl text-white"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <FaSpinner className="text-lg animate-spin" />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <FaPaperPlane className="text-lg" />
-                      <span>Send Message</span>
-                    </>
-                  )}
+                  <FaPaperPlane className="text-lg" />
+                  <span>Send Message</span>
                 </motion.button>
               </form>
             </motion.div>

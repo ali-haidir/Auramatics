@@ -200,7 +200,19 @@ const ContactPage = () => {
                 />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="/contact" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://auramatics.tech/contact?sent=1"
+                />
+                {/* Honeypot field to reduce spam (bots will fill this) */}
+                <input
+                  type="text"
+                  name="_honey"
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label

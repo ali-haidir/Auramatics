@@ -188,7 +188,7 @@ const ContactPage = () => {
               </h2>
 
               <form
-                action="https://formsubmit.co/khalihaider8@gmail.com"
+                action="https://formsubmit.co/info@auramatics.tech"
                 method="POST"
                 className="space-y-4 sm:space-y-6"
               >
@@ -200,6 +200,12 @@ const ContactPage = () => {
                 />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_cc" value="" />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Thank you for contacting AURAMATICS! We'll get back to you soon."
+                />
                 <input
                   type="hidden"
                   name="_next"
